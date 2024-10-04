@@ -47,7 +47,6 @@
             <p>Fondi raccolti: <span id="raisedAmount">0</span> ERG</p>
             <p>Obiettivo minimo: <span id="minGoal">1000</span> ERG</p>
             <p>Blocco corrente: <span id="currentHeight">Caricamento...</span></p>
-            <p>Deadline: <span id="deadline">Caricamento...</span></p>
         </div>
     </div>
 
@@ -61,7 +60,6 @@
     <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
     <script>
         let minToRaise = 1000000000; // 1000 ERG in nanoERG
-        let deadlineBlock = 500000;  // Un blocco di esempio
         let raisedAmount = 0;        // Totale raccolto
         let currentHeight = 0;       // Altezza corrente del blocco
 
@@ -81,16 +79,16 @@
             currentHeight = heightData.total - 1; // Blocco corrente
             document.getElementById('currentHeight').textContent = currentHeight;
 
-            // Simulazione fondi raccolti
+            // Aggiorna i fondi raccolti (potrebbe essere recuperato dal contratto intelligente in un'app reale)
             document.getElementById('raisedAmount').textContent = (raisedAmount / 1e9).toFixed(2);
             document.getElementById('minGoal').textContent = (minToRaise / 1e9).toFixed(2);
 
-            if (currentHeight >= deadlineBlock) {
-                document.getElementById('campaignStatus').textContent = 'Fallito (deadline raggiunta)';
-            } else if (raisedAmount >= minToRaise) {
-                document.getElementById('campaignStatus').textContent = 'Successo (obiettivo raggiunto)';
+            // Controlla lo stato della campagna
+            const campaignStatus = document.getElementById('campaignStatus');
+            if (raisedAmount >= minToRaise) {
+                campaignStatus.textContent = 'Successo (obiettivo raggiunto)';
             } else {
-                document.getElementById('campaignStatus').textContent = 'In corso (contribuisci ora!)';
+                campaignStatus.textContent = 'In corso (contribuisci ora!)';
             }
         }
 
@@ -129,9 +127,8 @@
             const txId = await ctx.submit_tx(tx);
             console.log("ID transazione inviata:", txId);
 
-            raisedAmount += amount;
-            currentHeight += 10; // Simula il progresso della blockchain
-            updateCampaignStatus();
+            raisedAmount += amount; // Aggiorna il totale raccolto
+            updateCampaignStatus(); // Aggiorna lo stato della campagna
             amountInput.value = ''; // Resetta l'input
             alert(`Hai contribuito con ${(amount / 1e9).toFixed(2)} ERG!`);
         }
