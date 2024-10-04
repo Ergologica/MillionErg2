@@ -1,4 +1,4 @@
-/* Reset di base */
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +20,13 @@ body {
 
 /* Header */
 header {
-    background-color: #ff6f00; /* Colore arancione per l'header */
+    background-color: #ff6f00;
     color: #fff;
     padding: 15px 0;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiungi ombra per far risaltare */
 }
 
 header .logo {
@@ -56,16 +55,15 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ffe0b2; /* Colore più chiaro all'hover */
+    color: #ffe0b2;
 }
 
-/* Sezione Hero */
+/* Hero Section */
 #hero {
-    background: linear-gradient(135deg, #ff6f00, #ffab40); /* Sfondo con gradiente arancione */
+    background: linear-gradient(135deg, #ff6f00, #ffab40);
     color: #fff;
     padding: 100px 0;
     text-align: center;
@@ -96,7 +94,7 @@ header nav ul li a:hover {
     color: #fff;
 }
 
-/* Sezioni generali */
+/* About, Benefits, Donate, Contact Sections */
 section {
     padding: 60px 0;
 }
@@ -107,9 +105,108 @@ section h2 {
     margin-bottom: 40px;
 }
 
+/* Benefits Section */
+#benefits .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.benefit-item {
+    background-color: #ffe0b2;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item h3 {
+    color: #ff6f00;
+    margin-bottom: 15px;
+}
+
+/* Donate Section */
+#donate {
+    background-color: #ff6f00;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+}
+
+#donate p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+#donate .btn {
+    background-color: #fff;
+    color: #ff6f00;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #ffe0b2;
+    padding: 60px 0;
+}
+
+/* Button per espandere la sezione contatti */
+#expand-contact-btn {
+    margin-bottom: 20px;
+}
+
+/* Container espandibile nascosto di default */
+.expandable-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Quando viene espanso */
+.expandable-container.expanded {
+    max-height: 1000px; /* Imposta un'altezza massima per farlo espandere */
+    opacity: 1;
+}
+
+/* Contact Form */
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ff6f00;
+    border-radius: 5px;
+}
+
+#contact button {
+    width: 100%;
+    background-color: #ff6f00;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 50px;
+}
+
+#contact button:hover {
+    background-color: #ffab40;
+}
+
 /* Footer */
 footer {
-    background-color: #333; /* Colore scuro per il footer */
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -118,5 +215,4 @@ footer {
 
 footer p {
     margin: 0;
-    font-size: 1em;
 }
