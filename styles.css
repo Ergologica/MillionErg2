@@ -23,7 +23,7 @@ body {
 
 /* Stili per l'intestazione */
 header {
-    background-color: #ff6f00; /* Colore di sfondo dell'intestazione */
+    background-color: #ff6f00; /* Colore di sfondo dell'intestazione (arancione) */
     padding: 20px 0; /* Padding interno verticale */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra sottile sotto l'intestazione */
 }
@@ -68,7 +68,7 @@ nav ul li {
 /* Stili per i link nel menu di navigazione */
 nav ul li a {
     text-decoration: none; /* Rimuove la sottolineatura dai link */
-    color: #ff6f00; /* Colore dei link */
+    color: #ffffff; /* Colore dei link */
     font-weight: bold; /* Rende il testo del link in grassetto */
 }
 
