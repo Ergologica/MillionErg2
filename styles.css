@@ -75,7 +75,7 @@ nav ul li a {
 /* Stili per la sezione Hero */
 #hero {
     background-color: #e0e0e0; /* Colore di sfondo della sezione Hero */
-    padding: 55px 0; /* Padding interno verticale per la sezione Hero */
+    padding: 50px 0; /* Padding interno verticale per la sezione Hero */
     text-align: center; /* Allinea il testo al centro */
 }
 
@@ -120,47 +120,83 @@ section h2 {
 /* Stili per la griglia dei vantaggi */
 .benefits-grid {
     display: grid; /* Utilizza il sistema di griglie */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Crea colonne automatiche */
-    gap: 20px; /* Spaziatura tra le colonne */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Griglia responsiva */
+    gap: 20px; /* Spazio tra le griglie */
 }
 
-/* Stili per gli elementi dei vantaggi */
-.benefit-item {
-    background-color: #f9f9f9; /* Colore di sfondo degli elementi dei vantaggi */
-    border: 1px solid #ddd; /* Bordo degli elementi dei vantaggi */
-    padding: 20px; /* Padding interno per gli elementi dei vantaggi */
-    border-radius: 5px; /* Rende gli angoli degli elementi dei vantaggi arrotondati */
-}
-
-/* Stili per il contenitore espandibile del modulo di contatto */
-.expandable-container {
-    display: none; /* Nasconde il modulo di contatto per impostazione predefinita */
-}
-
-/* Stili per il modulo di contatto */
-.expandable-container.expanded {
-    display: block; /* Mostra il modulo di contatto quando espanso */
-}
-
-/* Stili per i campi del modulo */
-form input,
-form textarea {
-    width: 100%; /* Imposta la larghezza al 100% */
-    padding: 10px; /* Padding interno per i campi del modulo */
-    margin: 10px 0; /* Margine verticale per i campi del modulo */
-    border: 1px solid #ddd; /* Bordo dei campi del modulo */
-    border-radius: 5px; /* Rende gli angoli dei campi del modulo arrotondati */
+/* Stili per i vantaggi */
+.benefit {
+    background-color: #f9f9f9; /* Colore di sfondo per ogni vantaggio */
+    padding: 20px; /* Padding interno per ogni vantaggio */
+    border-radius: 5px; /* Rende gli angoli dei vantaggi arrotondati */
 }
 
 /* Stili per il footer */
 footer {
     background-color: #333; /* Colore di sfondo del footer */
-    color: #ffffff; /* Colore del testo del footer */
+    color: #ffffff; /* Colore del testo nel footer */
     text-align: center; /* Allinea il testo al centro */
-    padding: 20px 0; /* Padding interno verticale per il footer */
+    padding: 10px 0; /* Padding interno verticale per il footer */
 }
 
-/* Stili per il testo del footer */
-footer p {
-    margin: 0; /* Rimuove il margine dal paragrafo nel footer */
+/* Media query per schermi piccoli */
+@media (max-width: 768px) {
+    /* Riduci la larghezza del contenitore */
+    .container {
+        width: 95%; /* Aumenta la larghezza per dispositivi mobili */
+        padding: 10px; /* Riduci il padding */
+    }
+
+    /* Stili per il menu di navigazione */
+    nav ul {
+        flex-direction: column; /* Cambia il layout a colonna */
+        align-items: flex-start; /* Allinea gli elementi a sinistra */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Aggiungi margine verticale tra gli elementi */
+    }
+
+    /* Stili per il titolo principale */
+    h1 {
+        font-size: 20px; /* Riduci la dimensione del font */
+    }
+
+    /* Stili per il pulsante */
+    .btn {
+        padding: 10px; /* Riduci il padding del pulsante */
+        font-size: 16px; /* Riduci la dimensione del font */
+    }
+
+    /* Stili per il contenitore di input */
+    .input-container {
+        flex-direction: column; /* Imposta la direzione a colonna */
+        gap: 10px; /* Spazio tra gli elementi */
+    }
+}
+
+/* Media query per schermi extra piccoli */
+@media (max-width: 480px) {
+    /* Ulteriori riduzioni per schermi molto piccoli */
+    h1 {
+        font-size: 18px; /* Ulteriormente riduci la dimensione del font */
+    }
+
+    /* Riduci ulteriormente il padding */
+    .btn {
+        padding: 8px; /* Riduci il padding */
+        font-size: 14px; /* Riduci la dimensione del font */
+    }
+}
+
+/* Stili per lo stato della campagna */
+.status {
+    margin-top: 20px; /* Distanza superiore per lo stato della campagna */
+    font-weight: bold; /* Rende il testo in grassetto */
+}
+
+/* Stili per le informazioni sugli obiettivi */
+.goal-info {
+    margin-top: 20px; /* Distanza superiore per le informazioni sugli obiettivi */
+    font-size: 16px; /* Dimensione del font per le informazioni sugli obiettivi */
 }
