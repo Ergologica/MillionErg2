@@ -3,124 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ERGO4ONE - DAO</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Collega il file CSS esterno -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Font da Google Fonts -->
+    <title>ERGO41 - Dona</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sezione Header -->
-    <header id="header">
+    <header>
         <div class="container">
-            <!-- Contenitore per il logo -->
-            <div class="logo-container"> <!-- Cornice tonda per il logo -->
-                 <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer"> 
-                <a href="#"><img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="ergo" class="logo"></a>
+            <div class="logo-container">
+                <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
+                </a>
             </div>
-            <h1>MillionErg</h1> <!-- Titolo principale dell'header -->
+            <h1>ERGO41</h1>
             <nav>
                 <ul>
-                    <!-- Menu di navigazione -->
-                    <li><a href="#about">Chi Siamo</a></li>
-                    <li><a href="#benefits">Vantaggi</a></li>
-                    <li><a href="#donate">Dona</a></li>
-                    <li><a href="#contact">Contatti</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="benefits.html">Vantaggi</a></li>
+                    <li><a href="donate.html">Dona</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <!-- Sezione Hero -->
-    <section id="hero">
+    
+    <section>
         <div class="container">
-            <h1>Costruire un Mondo Decentralizzato con ERGO4ONE</h1> <!-- Titolo principale -->
-            <p>Una piattaforma che promuove equità, trasparenza e solidarietà sociale grazie alla tecnologia blockchain.</p>
-            <a href="#donate" class="btn">Unisciti al Movimento</a> <!-- Pulsante per unirsi -->
+            <h2>Sostieni la Nostra Missione</h2>
+            <p>Informazioni su come donare a ERGO41...</p>
+            <a href="#" class="btn">Dona ERG Ora</a>
         </div>
     </section>
 
-    <!-- Sezione Chi Siamo -->
-    <section id="about">
-        <div class="container">
-            <h2>Cosa è ERGO4ONE</h2> <!-- Sottotitolo -->
-            <p>ERGO4ONE è una DAO che permette alle comunità di distribuire equamente le risorse. Utilizzando la tecnologia blockchain, favoriamo trasparenza, sicurezza ed equità.</p>
-        </div>
-    </section>
-
-    <!-- Sezione Vantaggi -->
-    <section id="benefits">
-        <div class="container">
-            <h2>I Vantaggi Chiave</h2> <!-- Sottotitolo -->
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>Governance Decentralizzata</h3> <!-- Vantaggio 1 -->
-                    <p>Decisioni eque, trasparenti e guidate dalla comunità.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Privacy e Sicurezza</h3> <!-- Vantaggio 2 -->
-                    <p>Protetta dalla blockchain e dalla crittografia all'avanguardia.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Pari Opportunità</h3> <!-- Vantaggio 3 -->
-                    <p>Creiamo una distribuzione bilanciata e equa delle risorse.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Costi di Transazione Ridotti</h3> <!-- Vantaggio 4 -->
-                    <p>La tecnologia blockchain garantisce commissioni minime per la nostra comunità.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sezione Dona -->
-    <section id="donate">
-        <div class="container">
-            <h2>Sostieni la Nostra Missione</h2> <!-- Sottotitolo -->
-            <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo dà potere agli individui e alle piccole imprese.</p>
-            <a href="#" class="btn">Dona ERG Ora</a> <!-- Pulsante per donare -->
-        </div>
-    </section>
-
-   <!-- Sezione Contatti -->
-   <section id="contact">
-        <div class="container">
-            <h2></h2>Contatta ERGO4ONE</h2> <!-- Sottotitolo -->
-            <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button> <!-- Pulsante per mostrare/nascondere il modulo -->
-            
-            <!-- Container espandibile per il modulo di contatto -->
-            <div id="contact-form-container" class="expandable-container">
-                <form action="#" method="post">
-                    <label for="name">Il Tuo Nome:</label>
-                    <input type="text" id="name" name="name" required> <!-- Campo per il nome -->
-
-                    <label for="email">La Tua Email:</label>
-                    <input type="email" id="email" name="email" required> <!-- Campo per l'email -->
-
-                    <label for="message">Il Tuo Messaggio:</label>
-                    <textarea id="message" name="message" required></textarea> <!-- Campo per il messaggio -->
-
-                    <button type="submit" class="btn">Invia Messaggio</button> <!-- Pulsante per inviare il messaggio -->
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- JavaScript per l'espansione del modulo di contatto -->
-    <script>
-        const expandBtn = document.getElementById('expand-contact-btn'); // Riferimento al pulsante di espansione
-        const contactContainer = document.getElementById('contact-form-container'); // Riferimento al contenitore del modulo
-
-        // Aggiunge un evento click al pulsante per mostrare/nascondere il modulo
-        expandBtn.addEventListener('click', () => {
-            contactContainer.classList.toggle('expanded'); // Alterna la classe 'expanded'
-            expandBtn.textContent = contactContainer.classList.contains('expanded') ? 'Nascondi il modulo di contatto' : 'Mostra il modulo di contatto'; // Cambia il testo del pulsante
-        });
-    </script>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p> <!-- Testo del footer -->
+            <p>&copy; 2024 ERGO41. Tutti i Diritti Riservati.</p>
         </div>
     </footer>
 </body>
