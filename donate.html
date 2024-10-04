@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dona - ERGO41</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MillionErg - Ergo</title>
+    <link rel="stylesheet" href="donate.css"> <!-- Modificato per includere il CSS specifico -->
 </head>
-<body>
+<body class="donate-page"> <!-- Aggiunto classe donate-page -->
     <!-- Logo Section -->
     <header class="header">
-        <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-            <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" border="0">
-        </a>
+        <a href="https://ibb.co/k3xWtBZ"><img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="ergo" border="0" class="logo"></a>
     </header>
 
     <!-- Main Content -->
     <div class="container">
-        <h1>ERGO41 - Dona</h1>
-        <h2>Contribuisci al nostro progetto!</h2>
-        <p>La tua donazione è fondamentale per il nostro progetto. Puoi donare direttamente token ERG utilizzando il tuo wallet.</p>
+        <h1>MillionErg</h1>
+        <h2>Contribuisci al progetto e aiutaci a creare un milionario!</h2>
+        <p>La prima pagina di Crowdfunding basata su smart contract Ergo in Italia</p>
 
         <div class="input-container">
             <input id="amount" type="number" placeholder="Inserisci l'importo in ERG" min="1">
@@ -28,7 +26,7 @@
         <div id="status" class="status">
             Stato della campagna: <span id="campaignStatus">Caricamento...</span>
         </div>
-
+        
         <div class="goal-info">
             <p>Fondi raccolti: <span id="raisedAmount">0</span> ERG</p>
             <p>Obiettivo minimo: <span id="minGoal">1000</span> ERG</p>
@@ -39,8 +37,8 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <p>© 2024 ERGO41. Tutti i Diritti Riservati.</p>
-        <a href="https://ergoplatform.org/" target="_blank" rel="noopener noreferrer">Scopri di più su Ergo</a>
+        <p>© 2024 MillionErg </p>
+        <a href="https://ergoplatform.org/" target="_blank">Learn more about Ergo</a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
