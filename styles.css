@@ -26,7 +26,7 @@ header {
 }
 
 header .logo {
-    width: 100px; /* Larghezza fissa per il logo */
+    width: 50px; /* Larghezza fissa per il logo */
     height: auto; /* Mantiene il rapporto d'aspetto */
     display: inline-block; /* Allineamento corretto con il titolo */
 }
