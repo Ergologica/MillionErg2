@@ -7,40 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-container">
-                <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
-                </a>
-            </div>
-            <h1>ERGO41</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li> <!-- Link alla home -->
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="benefits.html">Vantaggi</a></li>
-                    <li><a href="donate.html">Dona</a></li>
-                    <li><a href="contact.html">Contatti</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Logo Section -->
+    <header class="header">
+        <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" border="0">
+        </a>
     </header>
 
-    <section>
-        <div class="container">
-            <h2>Come Donare</h2>
-            <p>La tua donazione è fondamentale per il nostro progetto. Puoi donare direttamente token ERG utilizzando il tuo wallet.</p>
-            <h3>Indirizzo di Donazione</h3>
-            <p>Inserisci il tuo wallet qui: <strong>XXXXXXXXXXXXXXX</strong></p>
-            <p>Ogni contributo è apprezzato e farà una differenza!</p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="container">
+        <h1>ERGO41 - Dona</h1>
+        <h2>Contribuisci al nostro progetto!</h2>
+        <p>La tua donazione è fondamentale per il nostro progetto. Puoi donare direttamente token ERG utilizzando il tuo wallet.</p>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 ERGO41. Tutti i Diritti Riservati.</p>
+        <div class="input-container">
+            <input id="amount" type="number" placeholder="Inserisci l'importo in ERG" min="1">
+            <button onclick="sendContribution()">Contribuisci</button>
         </div>
+
+        <div id="status" class="status">
+            Stato della campagna: <span id="campaignStatus">Caricamento...</span>
+        </div>
+
+        <div class="goal-info">
+            <p>Fondi raccolti: <span id="raisedAmount">0</span> ERG</p>
+            <p>Obiettivo minimo: <span id="minGoal">1000</span> ERG</p>
+            <p>Blocco corrente: <span id="currentHeight">Caricamento...</span></p>
+            <p>Deadline: <span id="deadline">Caricamento...</span></p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2024 ERGO41. Tutti i Diritti Riservati.</p>
+        <a href="https://ergoplatform.org/" target="_blank" rel="noopener noreferrer">Scopri di più su Ergo</a>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
