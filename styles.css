@@ -1,117 +1,166 @@
-/* Stili generali */
+/* Resetta alcune proprietà di base per rendere il layout coerente */
+* {
+    margin: 0; /* Rimuove il margine predefinito */
+    padding: 0; /* Rimuove il padding predefinito */
+    box-sizing: border-box; /* Include padding e bordo nelle dimensioni totali */
+}
+
+/* Impostazioni generali del body */
 body {
-    font-family: 'Roboto', sans-serif; /* Font per il corpo della pagina */
-    margin: 0; /* Rimuove il margine di default */
-    padding: 0; /* Rimuove il padding di default */
-    line-height: 1.6; /* Altezza della linea per una migliore leggibilità */
+    font-family: 'Roboto', sans-serif; /* Imposta il font generale della pagina */
+    line-height: 1.6; /* Aumenta l'altezza delle righe per una migliore leggibilità */
+    color: #333; /* Colore del testo principale */
+    background-color: #f4f4f4; /* Colore di sfondo della pagina */
 }
 
-/* Contenitore principale */
+/* Stili per il contenitore principale */
 .container {
-    width: 90%; /* Larghezza del contenitore */
-    max-width: 1200px; /* Larghezza massima per schermi grandi */
-    margin: 0 auto; /* Centra il contenitore */
-    padding: 20px; /* Padding interno */
+    width: 80%; /* Imposta la larghezza del contenitore al 80% della larghezza della finestra */
+    max-width: 1200px; /* Limita la larghezza massima del contenitore */
+    margin: 0 auto; /* Centra il contenitore orizzontalmente */
+    padding: 20px; /* Aggiunge padding interno al contenitore */
 }
 
-/* Header */
+/* Stili per l'intestazione */
 header {
-    background-color: #ff6f00; /* Colore di sfondo dell'header */
-    color: #fff; /* Colore del testo */
-    padding: 20px 0; /* Padding superiore e inferiore */
-    position: sticky; /* Rende l'header fisso in cima */
-    top: 0; /* Posizione in alto */
-    width: 100%; /* Larghezza totale */
-    z-index: 100; /* Sovrapposizione sopra gli altri elementi */
+    background-color: #ffffff; /* Colore di sfondo dell'intestazione */
+    padding: 20px 0; /* Padding interno verticale */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra sottile sotto l'intestazione */
 }
 
-header .logo {
-    width: 50px; /* Larghezza fissa per il logo */
+/* Stili per il contenitore del logo */
+.logo-container {
+    width: 80px; /* Larghezza del contenitore */
+    height: 80px; /* Altezza del contenitore */
+    border-radius: 50%; /* Rende il contenitore rotondo */
+    overflow: hidden; /* Nasconde il contenuto che esce dal contenitore */
+    border: 3px solid #ff6f00; /* Bordo di colore arancione */
+    display: flex; /* Utilizza Flexbox per centrare il logo */
+    justify-content: center; /* Allinea il logo al centro orizzontalmente */
+    align-items: center; /* Allinea il logo al centro verticalmente */
+    margin-right: 20px; /* Distanza a destra dell'immagine del logo */
+}
+
+/* Stili per l'immagine del logo */
+.logo {
+    width: 70%; /* Rimpicciolisce l'immagine del logo */
     height: auto; /* Mantiene il rapporto d'aspetto */
-    display: inline-block; /* Allineamento corretto con il titolo */
 }
 
-header h1 {
-    display: inline-block; /* Allineamento corretto con il logo */
-    margin-left: 20px; /* Spaziatura a sinistra */
-    font-size: 24px; /* Dimensione del testo del logo */
+/* Stili per il titolo principale nell'intestazione */
+h1 {
+    font-size: 24px; /* Dimensione del font per il titolo principale */
+    color: #333; /* Colore del titolo principale */
+    display: inline-block; /* Permette di mantenere il titolo sulla stessa riga del logo */
 }
 
-header nav {
-    display: inline-block; /* Mantiene tutto sulla stessa linea */
-    float: right; /* Sposta il nav a destra */
-}
-
-/* Stili dei link di navigazione */
+/* Stili per il menu di navigazione */
 nav ul {
-    list-style-type: none; /* Rimuove i pallini della lista */
-    margin: 0; /* Rimuove il margine */
-    padding: 0; /* Rimuove il padding */
+    list-style: none; /* Rimuove i punti elenco predefiniti */
+    display: flex; /* Utilizza Flexbox per l'allineamento orizzontale */
 }
 
+/* Stili per gli elementi del menu di navigazione */
 nav ul li {
-    display: inline; /* Visualizza i link in linea */
-    margin: 0 15px; /* Spaziatura orizzontale tra i link */
+    margin: 0 15px; /* Distanza orizzontale tra gli elementi del menu */
 }
 
+/* Stili per i link nel menu di navigazione */
 nav ul li a {
-    color: #fff; /* Colore del testo del link */
-    text-decoration: none; /* Rimuove la sottolineatura */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    color: #ff6f00; /* Colore dei link */
+    font-weight: bold; /* Rende il testo del link in grassetto */
 }
 
-/* Sezione Hero */
+/* Stili per la sezione Hero */
 #hero {
-    background-color: #f4f4f4; /* Colore di sfondo */
-    padding: 60px 0; /* Padding superiore e inferiore */
-    text-align: center; /* Centra il testo */
+    background-color: #e0e0e0; /* Colore di sfondo della sezione Hero */
+    padding: 50px 0; /* Padding interno verticale per la sezione Hero */
+    text-align: center; /* Allinea il testo al centro */
 }
 
-/* Pulsante */
+/* Stili per i titoli nella sezione Hero */
+#hero h1 {
+    font-size: 36px; /* Dimensione del font per il titolo nella sezione Hero */
+    color: #333; /* Colore del titolo nella sezione Hero */
+}
+
+/* Stili per i pulsanti */
 .btn {
-    display: inline-block; /* Mostra come blocco in linea */
+    display: inline-block; /* Permette di applicare padding e margini */
+    padding: 10px 20px; /* Padding interno per il pulsante */
     background-color: #ff6f00; /* Colore di sfondo del pulsante */
-    color: #fff; /* Colore del testo del pulsante */
-    padding: 10px 20px; /* Padding interno */
-    border: none; /* Rimuove il bordo */
-    border-radius: 5px; /* Angoli arrotondati */
-    text-decoration: none; /* Rimuove la sottolineatura */
-    margin-top: 10px; /* Spaziatura superiore */
+    color: #ffffff; /* Colore del testo del pulsante */
+    border: none; /* Rimuove il bordo predefinito */
+    border-radius: 5px; /* Rende gli angoli del pulsante arrotondati */
+    text-decoration: none; /* Rimuove la sottolineatura dal pulsante */
+    cursor: pointer; /* Cambia il cursore quando si passa sopra il pulsante */
+    transition: background-color 0.3s ease; /* Aggiunge un effetto di transizione */
 }
 
-/* Sezione Chi Siamo */
-#about, #benefits, #donate, #contact {
-    padding: 40px 0; /* Padding superiore e inferiore */
+/* Effetto hover per i pulsanti */
+.btn:hover {
+    background-color: #e65100; /* Colore di sfondo del pulsante al passaggio del mouse */
 }
 
-/* Stili per i vantaggi */
+/* Stili per le sezioni */
+section {
+    padding: 40px 0; /* Padding interno verticale per ogni sezione */
+    background-color: #ffffff; /* Colore di sfondo delle sezioni */
+    margin-bottom: 20px; /* Distanza tra le sezioni */
+}
+
+/* Stili per i titoli delle sezioni */
+section h2 {
+    font-size: 28px; /* Dimensione del font per i titoli delle sezioni */
+    color: #333; /* Colore dei titoli delle sezioni */
+    margin-bottom: 20px; /* Distanza inferiore per i titoli delle sezioni */
+}
+
+/* Stili per la griglia dei vantaggi */
 .benefits-grid {
-    display: grid; /* Utilizza il layout a griglia */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonne responsiva */
-    gap: 20px; /* Spaziatura tra gli elementi */
+    display: grid; /* Utilizza il sistema di griglie */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Crea colonne automatiche */
+    gap: 20px; /* Spaziatura tra le colonne */
 }
 
-/* Stili per ogni vantaggio */
+/* Stili per gli elementi dei vantaggi */
 .benefit-item {
-    background-color: #fff; /* Colore di sfondo */
-    padding: 20px; /* Padding interno */
-    border: 1px solid #ddd; /* Bordo grigio chiaro */
-    border-radius: 5px; /* Angoli arrotondati */
+    background-color: #f9f9f9; /* Colore di sfondo degli elementi dei vantaggi */
+    border: 1px solid #ddd; /* Bordo degli elementi dei vantaggi */
+    padding: 20px; /* Padding interno per gli elementi dei vantaggi */
+    border-radius: 5px; /* Rende gli angoli degli elementi dei vantaggi arrotondati */
 }
 
-/* Sezione Contatti */
+/* Stili per il contenitore espandibile del modulo di contatto */
 .expandable-container {
-    display: none; /* Nasconde il contenitore inizialmente */
+    display: none; /* Nasconde il modulo di contatto per impostazione predefinita */
 }
 
+/* Stili per il modulo di contatto */
 .expandable-container.expanded {
-    display: block; /* Mostra il contenitore quando espanso */
+    display: block; /* Mostra il modulo di contatto quando espanso */
 }
 
-/* Footer */
+/* Stili per i campi del modulo */
+form input,
+form textarea {
+    width: 100%; /* Imposta la larghezza al 100% */
+    padding: 10px; /* Padding interno per i campi del modulo */
+    margin: 10px 0; /* Margine verticale per i campi del modulo */
+    border: 1px solid #ddd; /* Bordo dei campi del modulo */
+    border-radius: 5px; /* Rende gli angoli dei campi del modulo arrotondati */
+}
+
+/* Stili per il footer */
 footer {
     background-color: #333; /* Colore di sfondo del footer */
-    color: #fff; /* Colore del testo */
-    text-align: center; /* Centra il testo */
-    padding: 15px 0; /* Padding superiore e inferiore */
-    margin-top: 40px; /* Margine superiore per distanziarsi dal contenuto */
+    color: #ffffff; /* Colore del testo del footer */
+    text-align: center; /* Allinea il testo al centro */
+    padding: 20px 0; /* Padding interno verticale per il footer */
+}
+
+/* Stili per il testo del footer */
+footer p {
+    margin: 0; /* Rimuove il margine dal paragrafo nel footer */
 }
