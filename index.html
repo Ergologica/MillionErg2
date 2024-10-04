@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERGO41 - Dona</title>
+    <title>ERGO41 - Costruire un Mondo Decentralizzato</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,14 +25,88 @@
             </nav>
         </div>
     </header>
-    
-    <section>
+
+    <!-- Sezione Hero -->
+    <section id="hero">
+        <div class="container">
+            <h1>Costruire un Mondo Decentralizzato con ERGO41</h1>
+            <p>Una piattaforma che promuove equità, trasparenza e solidarietà sociale grazie alla tecnologia blockchain.</p>
+            <a href="#donate" class="btn">Unisciti al Movimento</a>
+        </div>
+    </section>
+
+    <!-- Sezione Chi Siamo -->
+    <section id="about">
+        <div class="container">
+            <h2>Cosa è ERGO41</h2>
+            <p>ERGO41 è una cooperativa decentralizzata DAO che permette alle comunità di distribuire equamente le risorse. Utilizzando la tecnologia blockchain, favoriamo trasparenza, sicurezza ed equità.</p>
+        </div>
+    </section>
+
+    <!-- Sezione Vantaggi -->
+    <section id="benefits">
+        <div class="container">
+            <h2>I Nostri Vantaggi Chiave</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Governance Decentralizzata</h3>
+                    <p>Decisioni eque, trasparenti e guidate dalla comunità.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Privacy e Sicurezza</h3>
+                    <p>Protetta dalla blockchain e dalla crittografia all'avanguardia.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Pari Opportunità</h3>
+                    <p>Creiamo una distribuzione bilanciata e equa delle risorse.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Costi di Transazione Ridotti</h3>
+                    <p>La tecnologia blockchain garantisce commissioni minime per la nostra comunità.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Dona -->
+    <section id="donate">
         <div class="container">
             <h2>Sostieni la Nostra Missione</h2>
-            <p>Informazioni su come donare a ERGO41...</p>
+            <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo dà potere agli individui e alle piccole imprese.</p>
             <a href="#" class="btn">Dona ERG Ora</a>
         </div>
     </section>
+
+    <!-- Sezione Contatti -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contatta ERGO41</h2>
+            <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button>
+            <div id="contact-form-container" class="expandable-container">
+                <form action="#" method="post">
+                    <label for="name">Il Tuo Nome:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">La Tua Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Il Tuo Messaggio:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit" class="btn">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const expandBtn = document.getElementById('expand-contact-btn');
+        const contactContainer = document.getElementById('contact-form-container');
+        expandBtn.addEventListener('click', () => {
+            contactContainer.classList.toggle('expanded');
+            expandBtn.textContent = contactContainer.classList.contains('expanded') ? 'Nascondi il modulo di contatto' : 'Mostra il modulo di contatto';
+        });
+    </script>
 
     <footer>
         <div class="container">
