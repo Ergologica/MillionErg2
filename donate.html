@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dona - ERGO41</title>
     <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
-    
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="container">
             <div class="logo-container">
-                <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
+                <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer" aria-label="Visita il sito di Ergo Platform">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo di ERGO41" class="logo">
                 </a>
             </div>
             <h1>ERGO41</h1>
@@ -29,32 +28,36 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
-        <h1>MillionErg</h1>
-        <h2>Contribuisci al progetto e aiutaci a creare un milionario!</h2>
-        <p>La prima pagina di Crowdfunding basata su smart contract Ergo in Italia</p>
+    <main class="container">
+        <h2>MillionErg</h2>
+        <h3>Contribuisci al progetto e aiutaci a creare un milionario!</h3>
+        <p>La prima pagina di crowdfunding basata su smart contract Ergo in Italia.</p>
 
-        <div class="input-container">
-            <input id="amount" type="number" placeholder="Inserisci l'importo in ERG" min="1">
-            <button onclick="sendContribution()">Contribuisci</button>
-        </div>
+        <section class="donation-section">
+            <div class="input-container">
+                <label for="amount">Inserisci l'importo in ERG:</label>
+                <input id="amount" type="number" placeholder="1" min="1" aria-label="Importo in ERG da donare">
+                <button onclick="sendContribution()">Contribuisci</button>
+            </div>
 
-        <div id="status" class="status">
-            Stato della campagna: <span id="campaignStatus">Caricamento...</span>
-        </div>
+            <div id="status" class="status">
+                Stato della campagna: <span id="campaignStatus">Caricamento...</span>
+            </div>
+        </section>
         
-        <div class="goal-info">
+        <section class="goal-info">
+            <h4>Informazioni sulla campagna</h4>
             <p>Fondi raccolti: <span id="raisedAmount">0</span> ERG</p>
             <p>Obiettivo minimo: <span id="minGoal">1000</span> ERG</p>
             <p>Blocco corrente: <span id="currentHeight">Caricamento...</span></p>
             <p>Deadline: <span id="deadline">Caricamento...</span></p>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>© 2024 MillionErg </p>
-        <a href="https://ergoplatform.org/" target="_blank">Learn more about Ergo</a>
+        <p>© 2024 MillionErg</p>
+        <a href="https://ergoplatform.org/" target="_blank" rel="noopener noreferrer">Learn more about Ergo</a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
