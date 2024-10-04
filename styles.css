@@ -1,218 +1,117 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Stili generali */
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #fff;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Font per il corpo della pagina */
+    margin: 0; /* Rimuove il margine di default */
+    padding: 0; /* Rimuove il padding di default */
+    line-height: 1.6; /* Altezza della linea per una migliore leggibilità */
 }
 
-/* Container */
+/* Contenitore principale */
 .container {
-    width: 90%;
-    margin: 0 auto;
+    width: 90%; /* Larghezza del contenitore */
+    max-width: 1200px; /* Larghezza massima per schermi grandi */
+    margin: 0 auto; /* Centra il contenitore */
+    padding: 20px; /* Padding interno */
 }
 
 /* Header */
 header {
-    background-color: #ff6f00;
-    color: #fff;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+    background-color: #ff6f00; /* Colore di sfondo dell'header */
+    color: #fff; /* Colore del testo */
+    padding: 20px 0; /* Padding superiore e inferiore */
+    position: sticky; /* Rende l'header fisso in cima */
+    top: 0; /* Posizione in alto */
+    width: 100%; /* Larghezza totale */
+    z-index: 100; /* Sovrapposizione sopra gli altri elementi */
 }
 
 header .logo {
-    float: left;
+    width: 100px; /* Larghezza fissa per il logo */
+    height: auto; /* Mantiene il rapporto d'aspetto */
+    display: inline-block; /* Allineamento corretto con il titolo */
 }
 
-header .logo h1 {
-    margin: 0;
-    font-size: 24px;
+header h1 {
+    display: inline-block; /* Allineamento corretto con il logo */
+    margin-left: 20px; /* Spaziatura a sinistra */
+    font-size: 24px; /* Dimensione del testo del logo */
 }
 
 header nav {
-    float: right;
+    display: inline-block; /* Mantiene tutto sulla stessa linea */
+    float: right; /* Sposta il nav a destra */
 }
 
-header nav ul {
-    list-style: none;
+/* Stili dei link di navigazione */
+nav ul {
+    list-style-type: none; /* Rimuove i pallini della lista */
+    margin: 0; /* Rimuove il margine */
+    padding: 0; /* Rimuove il padding */
 }
 
-header nav ul li {
-    display: inline;
-    margin-left: 20px;
+nav ul li {
+    display: inline; /* Visualizza i link in linea */
+    margin: 0 15px; /* Spaziatura orizzontale tra i link */
 }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+nav ul li a {
+    color: #fff; /* Colore del testo del link */
+    text-decoration: none; /* Rimuove la sottolineatura */
 }
 
-header nav ul li a:hover {
-    color: #ffe0b2;
-}
-
-/* Hero Section */
+/* Sezione Hero */
 #hero {
-    background: linear-gradient(135deg, #ff6f00, #ffab40);
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
+    background-color: #f4f4f4; /* Colore di sfondo */
+    padding: 60px 0; /* Padding superiore e inferiore */
+    text-align: center; /* Centra il testo */
 }
 
-#hero h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-}
-
-#hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
+/* Pulsante */
 .btn {
-    background-color: #fff;
-    color: #ff6f00;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
+    display: inline-block; /* Mostra come blocco in linea */
+    background-color: #ff6f00; /* Colore di sfondo del pulsante */
+    color: #fff; /* Colore del testo del pulsante */
+    padding: 10px 20px; /* Padding interno */
+    border: none; /* Rimuove il bordo */
+    border-radius: 5px; /* Angoli arrotondati */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    margin-top: 10px; /* Spaziatura superiore */
 }
 
-.btn:hover {
-    background-color: #ffab40;
-    color: #fff;
+/* Sezione Chi Siamo */
+#about, #benefits, #donate, #contact {
+    padding: 40px 0; /* Padding superiore e inferiore */
 }
 
-/* About, Benefits, Donate, Contact Sections */
-section {
-    padding: 60px 0;
+/* Stili per i vantaggi */
+.benefits-grid {
+    display: grid; /* Utilizza il layout a griglia */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonne responsiva */
+    gap: 20px; /* Spaziatura tra gli elementi */
 }
 
-section h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-/* Benefits Section */
-#benefits .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
+/* Stili per ogni vantaggio */
 .benefit-item {
-    background-color: #ffe0b2;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Colore di sfondo */
+    padding: 20px; /* Padding interno */
+    border: 1px solid #ddd; /* Bordo grigio chiaro */
+    border-radius: 5px; /* Angoli arrotondati */
 }
 
-.benefit-item h3 {
-    color: #ff6f00;
-    margin-bottom: 15px;
-}
-
-/* Donate Section */
-#donate {
-    background-color: #ff6f00;
-    color: #fff;
-    text-align: center;
-    padding: 80px 0;
-}
-
-#donate p {
-    max-width: 800px;
-    margin: 0 auto 50px;
-}
-
-#donate .btn {
-    background-color: #fff;
-    color: #ff6f00;
-}
-
-/* Contact Section */
-#contact {
-    background-color: #ffe0b2;
-    padding: 60px 0;
-}
-
-/* Button per espandere la sezione contatti */
-#expand-contact-btn {
-    margin-bottom: 20px;
-}
-
-/* Container espandibile nascosto di default */
+/* Sezione Contatti */
 .expandable-container {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    display: none; /* Nasconde il contenitore inizialmente */
 }
 
-/* Quando viene espanso */
 .expandable-container.expanded {
-    max-height: 1000px; /* Imposta un'altezza massima per farlo espandere */
-    opacity: 1;
-}
-
-/* Contact Form */
-#contact form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-#contact label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#contact input, #contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #ff6f00;
-    border-radius: 5px;
-}
-
-#contact button {
-    width: 100%;
-    background-color: #ff6f00;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    font-size: 1.2em;
-    border-radius: 50px;
-}
-
-#contact button:hover {
-    background-color: #ffab40;
+    display: block; /* Mostra il contenitore quando espanso */
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 0;
+    background-color: #333; /* Colore di sfondo del footer */
+    color: #fff; /* Colore del testo */
+    text-align: center; /* Centra il testo */
+    padding: 15px 0; /* Padding superiore e inferiore */
+    margin-top: 40px; /* Margine superiore per distanziarsi dal contenuto */
 }
