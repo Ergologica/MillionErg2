@@ -1,33 +1,51 @@
-/* Assicurati che il CSS si applichi solo alla pagina donate */
 html, body {
-    height: 100%;  /* Assicura che il body e l'html occupino l'intera altezza della viewport */
+    height: 100%; /* Assicura che il body e l'html occupino l'intera altezza della finestra */
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif; /* Usa un font comune */
-    background-color: #f4f4f9; /* Colore di sfondo */
-    color: #333; /* Colore del testo */
+    font-family: 'Roboto', sans-serif; /* Font coerente con il resto del sito */
+    background-color: #f4f4f9; /* Colore di sfondo per la pagina donate */
+    color: #333; /* Colore del testo principale */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Assicura che il footer sia spinto in fondo */
+    justify-content: space-between; /* Assicura che il footer sia spinto verso il basso */
+}
+
+.header {
+    width: 100%;
+    background-color: #ff6f00; /* Colore di sfondo dell'header */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Spazia il logo e il titolo */
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 80px; /* Dimensioni del logo */
+    height: auto;
 }
 
 .container {
     max-width: 800px; /* Larghezza massima del contenitore */
-    margin: 50px auto; /* Margini automatici per centrare */
-    padding: 20px; /* Padding interno */
-    background-color: #fff; /* Colore di sfondo del contenitore */
+    margin: 50px auto; /* Margine verticale per il contenitore */
+    padding: 20px; /* Padding interno per il contenitore */
+    background-color: #fff; /* Colore di sfondo per il contenitore */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra per il contenitore */
-    border-radius: 8px; /* Angoli arrotondati */
-    text-align: center; /* Testo centrato */
-    flex-grow: 1; /* Permette al contenitore di espandersi */
+    border-radius: 8px; /* Angoli arrotondati per il contenitore */
+    text-align: center; /* Allinea il testo al centro */
+    flex-grow: 1; /* Consente al contenitore di espandersi per occupare lo spazio disponibile */
 }
 
 h1 {
-    color: #4CAF50; /* Colore verde per il titolo principale */
-    margin-bottom: 20px; /* Margine inferiore */
+    color: #4CAF50; /* Colore del titolo principale */
+    margin-bottom: 20px; /* Margine inferiore per il titolo principale */
+}
+
+h2 {
+    margin-bottom: 20px; /* Margine inferiore per il sottotitolo */
 }
 
 p {
@@ -35,62 +53,62 @@ p {
 }
 
 .input-container {
-    margin-top: 20px; /* Margine superiore */
+    margin-top: 20px; /* Margine superiore per il contenitore degli input */
 }
 
 input[type="number"] {
-    padding: 10px; /* Padding interno */
-    font-size: 1em; /* Dimensione del font */
+    padding: 10px; /* Padding interno per l'input */
+    font-size: 1em; /* Dimensione del font per l'input */
     width: 60%; /* Larghezza dell'input */
-    margin-bottom: 20px; /* Margine inferiore */
-    border: 1px solid #ddd; /* Bordo */
-    border-radius: 5px; /* Angoli arrotondati */
+    margin-bottom: 20px; /* Margine inferiore per l'input */
+    border: 1px solid #ddd; /* Bordo per l'input */
+    border-radius: 5px; /* Angoli arrotondati per l'input */
 }
 
 button {
-    padding: 10px 20px; /* Padding interno del pulsante */
-    background-color: #4CAF50; /* Colore verde per il pulsante */
-    color: white; /* Colore del testo del pulsante */
-    border: none; /* Nessun bordo */
-    font-size: 1em; /* Dimensione del font */
-    cursor: pointer; /* Cambia il cursore */
-    border-radius: 5px; /* Angoli arrotondati */
+    padding: 10px 20px; /* Padding interno per il pulsante */
+    background-color: #ff6f00; /* Colore di sfondo per il pulsante */
+    color: white; /* Colore del testo per il pulsante */
+    border: none; /* Rimuove il bordo predefinito */
+    font-size: 1em; /* Dimensione del font per il pulsante */
+    cursor: pointer; /* Cambia il cursore quando si passa sopra il pulsante */
+    border-radius: 5px; /* Angoli arrotondati per il pulsante */
 }
 
 button:hover {
-    background-color: #45a049; /* Colore di sfondo al passaggio del mouse */
+    background-color: #e65100; /* Colore di sfondo del pulsante al passaggio del mouse */
 }
 
 .status {
-    margin-top: 20px; /* Margine superiore */
-    font-size: 1.1em; /* Dimensione del font */
-    font-weight: bold; /* Grassetto */
+    margin-top: 20px; /* Margine superiore per il messaggio di stato */
+    font-size: 1.1em; /* Dimensione del font per il messaggio di stato */
+    font-weight: bold; /* Grassetto per il messaggio di stato */
 }
 
 .goal-info {
-    margin-top: 30px; /* Margine superiore */
-    font-size: 1.2em; /* Dimensione del font */
-    text-align: left; /* Testo allineato a sinistra */
-    line-height: 1.6; /* Altezza della linea */
+    margin-top: 30px; /* Margine superiore per le informazioni sugli obiettivi */
+    font-size: 1.2em; /* Dimensione del font per le informazioni sugli obiettivi */
+    text-align: left; /* Allinea il testo a sinistra */
+    line-height: 1.6; /* Altezza della riga per migliorare la leggibilità */
 }
 
 footer {
-    width: 100%; /* Larghezza del footer */
+    width: 100%; /* Larghezza completa per il footer */
     background-color: #333; /* Colore di sfondo del footer */
-    padding: 20px; /* Padding interno */
-    text-align: center; /* Testo centrato */
-    color: white; /* Colore del testo */
+    padding: 20px; /* Padding interno per il footer */
+    text-align: center; /* Allinea il testo al centro nel footer */
+    color: white; /* Colore del testo nel footer */
 }
 
 footer p {
-    margin: 0; /* Nessun margine */
+    margin: 0; /* Rimuove il margine dal paragrafo nel footer */
 }
 
 footer a {
-    color: #4CAF50; /* Colore verde per i link */
-    text-decoration: none; /* Nessuna sottolineatura */
+    color: #4CAF50; /* Colore dei link nel footer */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
 }
 
 footer a:hover {
-    text-decoration: underline; /* Sottolinea al passaggio del mouse */
+    text-decoration: underline; /* Sottolinea i link al passaggio del mouse */
 }
