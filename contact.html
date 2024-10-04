@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dona - ERGO41</title>
-    <link rel="stylesheet" href="styles.css"> 
-    
+    <title>Contatti - ERGO41</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
 </head>
 <body>
     <!-- Header Section -->
@@ -19,6 +18,7 @@
             <h1>ERGO41</h1>
             <nav>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Chi Siamo</a></li>
                     <li><a href="benefits.html">Vantaggi</a></li>
                     <li><a href="donate.html">Dona</a></li>
@@ -30,34 +30,37 @@
 
     <!-- Main Content -->
     <div class="container">
-        <h1>MillionErg</h1>
-        <h2>Contribuisci al progetto e aiutaci a creare un milionario!</h2>
-        <p>La prima pagina di Crowdfunding basata su smart contract Ergo in Italia</p>
+        <h2>Contattaci</h2>
+        <p>Se hai domande o commenti, non esitare a contattarci. Compila il modulo qui sotto e ti risponderemo il prima possibile.</p>
 
-        <div class="input-container">
-            <input id="amount" type="number" placeholder="Inserisci l'importo in ERG" min="1">
-            <button onclick="sendContribution()">Contribuisci</button>
-        </div>
+        <!-- Contact Form -->
+        <form id="contactForm" action="#" method="POST">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
 
-        <div id="status" class="status">
-            Stato della campagna: <span id="campaignStatus">Caricamento...</span>
-        </div>
-        
-        <div class="goal-info">
-            <p>Fondi raccolti: <span id="raisedAmount">0</span> ERG</p>
-            <p>Obiettivo minimo: <span id="minGoal">1000</span> ERG</p>
-            <p>Blocco corrente: <span id="currentHeight">Caricamento...</span></p>
-            <p>Deadline: <span id="deadline">Caricamento...</span></p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Messaggio:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Invia Messaggio</button>
+        </form>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Altri modi per contattarci:</h3>
+            <p>Email: <a href="mailto:info@ergo41.com">info@ergo41.com</a></p>
+            <p>Telefono: <a href="tel:+391234567890">+39 123 456 7890</a></p>
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer>
-        <p>© 2024 MillionErg </p>
+        <p>© 2024 MillionErg</p>
         <a href="https://ergoplatform.org/" target="_blank">Learn more about Ergo</a>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
