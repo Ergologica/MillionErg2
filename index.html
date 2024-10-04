@@ -83,37 +83,44 @@
 </section>
 
     <!-- Sezione Contatti -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contatta ERGO4ONE</h2>
-            <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button>
-            <div id="contact-form-container" class="expandable-container">
-                <form action="#" method="post">
-                    <label for="name">Il Tuo Nome:</label>
-                    <input type="text" id="name" name="name" required>
+<section id="contact">
+    <div class="container">
+        <h2>Contatta ERGO4ONE</h2>
+        <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button>
+        <div id="contact-form-container" class="expandable-container">
+            <form action="#" method="post">
+                <label for="name">Il Tuo Nome:</label>
+                <input type="text" id="name" name="name" required>
 
-                    <label for="email">La Tua Email:</label>
-                    <input type="email" id="email" name="email" required>
+                <label for="email">La Tua Email:</label>
+                <input type="email" id="email" name="email" required>
 
-                    <label for="message">Il Tuo Messaggio:</label>
-                    <textarea id="message" name="message" required></textarea>
+                <label for="message">Il Tuo Messaggio:</label>
+                <textarea id="message" name="message" required></textarea>
 
-                    <button type="submit" class="btn">Invia Messaggio</button>
-                </form>
-            </div>
+                <button type="submit" class="btn">Invia Messaggio</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script>
-        const expandBtn = document.getElementById('expand-contact-btn');
-        const contactContainer = document.getElementById('contact-form-container');
-        expandBtn.addEventListener('click', () => {
-            contactContainer.classList.toggle('expanded');
-            expandBtn.textContent = contactContainer.classList.contains('expanded') ? 'Nascondi il modulo di contatto' : 'Mostra il modulo di contatto';
-        });
-    </script>
+<script>
+    const expandBtn = document.getElementById('expand-contact-btn');
+    const contactContainer = document.getElementById('contact-form-container');
 
-    <footer>
+    expandBtn.addEventListener('click', () => {
+        contactContainer.classList.toggle('expanded');
+        expandBtn.textContent = contactContainer.classList.contains('expanded') 
+            ? 'Nascondi il modulo di contatto' 
+            : 'Mostra il modulo di contatto';
+    });
+</script>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
+    </div>
+</footer>
         <div class="container">
             <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
         </div>
