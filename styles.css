@@ -23,7 +23,7 @@ body {
 
 /* Stili per l'intestazione */
 header {
-    background-color: #ffffff; /* Colore di sfondo dell'intestazione */
+    background-color: #ff6f00; /* Colore di sfondo dell'intestazione */
     padding: 20px 0; /* Padding interno verticale */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra sottile sotto l'intestazione */
 }
