@@ -125,7 +125,7 @@ section h2 {
 }
 
 /* Stili per i vantaggi */
-.benefit {
+.benefit-item {
     background-color: #f9f9f9; /* Colore di sfondo per ogni vantaggio */
     padding: 20px; /* Padding interno per ogni vantaggio */
     border-radius: 5px; /* Rende gli angoli dei vantaggi arrotondati */
