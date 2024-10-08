@@ -105,6 +105,7 @@
         .expandable-container.expanded {
             display: block;
         }
+
         /* Stili per il menu a discesa */
         .hamburger {
             display: none;
@@ -121,16 +122,35 @@
             background-color: white; /* Colore delle linee */
             transition: 0.3s;
         }
+
+        /* Stili per il menu mobile */
+        .menu-overlay {
+            display: none; /* Nasconde il menu di default */
+            position: fixed; /* Posizionamento fisso per coprire l'intero schermo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Sfondo semi-trasparente */
+            z-index: 9; /* Assicura che il menu sia sopra altri elementi */
+            flex-direction: column; /* Colonne per il menu */
+            align-items: center; /* Centra gli elementi */
+            justify-content: center; /* Centra verticalmente gli elementi */
+        }
+        .menu-overlay ul {
+            display: flex; /* Visualizza i collegamenti in una colonna */
+            flex-direction: column; /* Colonne per il menu */
+        }
+        .menu-overlay ul li {
+            margin: 20px 0; /* Margine per separare i collegamenti */
+        }
+        .menu-overlay.show {
+            display: flex; /* Mostra il menu quando è attivo */
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 display: none; /* Nascondi il menu di navigazione */
-                flex-direction: column; /* Cambia la direzione per i dispositivi mobili */
-                position: absolute; /* Posiziona il menu in modo assoluto */
-                top: 50px; /* Posizionamento rispetto all'header */
-                left: 0;
-                width: 100%; /* Larghezza del menu a discesa */
-                background-color: #333; /* Sfondo del menu */
-                z-index: 10; /* Assicura che il menu sia sopra altri elementi */
             }
             nav ul li {
                 margin: 0; /* Rimuove il margine per l'allineamento */
@@ -139,9 +159,6 @@
                 padding: 10px; /* Padding per cliccare più facilmente */
                 text-align: center; /* Centra il testo */
                 display: block; /* Rende ogni link un blocco */
-            }
-            nav ul.show {
-                display: flex; /* Mostra il menu quando è attivo */
             }
             .hamburger {
                 display: flex; /* Mostra l'icona hamburger sui dispositivi mobili */
@@ -178,6 +195,18 @@
             </nav>
         </div>
     </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <nav>
+            <ul id="nav-links-mobile">
+                <li><a href="about.html">Chi Siamo</a></li>
+                <li><a href="benefits.html">Vantaggi</a></li>
+                <li><a href="donate.html">Dona</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <!-- Sezione Hero -->
     <section id="hero">
@@ -258,7 +287,7 @@
         const expandBtn = document.getElementById('expand-contact-btn');
         const contactContainer = document.getElementById('contact-form-container');
         const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
 
         expandBtn.addEventListener('click', () => {
             contactContainer.classList.toggle('expanded');
@@ -269,7 +298,12 @@
 
         // Toggle the navigation menu on hamburger click
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
+            menuOverlay.classList.toggle('show');
+        });
+
+        // Close the menu overlay when clicking outside of it
+        menuOverlay.addEventListener('click', () => {
+            menuOverlay.classList.remove('show');
         });
     </script>
 
