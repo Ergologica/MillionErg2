@@ -8,7 +8,7 @@
 
     <!-- Link Bootstrap CSS for responsive design -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,9 +38,13 @@
             margin-left: 15px;
             vertical-align: middle;
         }
+        nav {
+            position: relative; /* Rende il nav relativo per il posizionamento del menu */
+        }
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
         nav ul li {
             display: inline-block;
@@ -100,17 +104,48 @@
         .expandable-container.expanded {
             display: block;
         }
+        /* Stili per il menu a discesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .line {
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            transition: 0.3s;
+        }
         @media (max-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: 1fr; /* Un'unica colonna sui dispositivi più piccoli */
-            }
             nav ul {
-                text-align: center;
-                padding: 10px 0;
+                display: none; /* Nascondi il menu di navigazione */
+                flex-direction: column; /* Cambia la direzione per i dispositivi mobili */
+                position: absolute; /* Posiziona il menu in modo assoluto */
+                top: 50px; /* Posizionamento rispetto all'header */
+                left: 0;
+                width: 100%; /* Larghezza del menu a discesa */
+                background-color: #333; /* Sfondo del menu */
+                z-index: 10; /* Assicura che il menu sia sopra altri elementi */
             }
             nav ul li {
-                display: block;
-                margin-bottom: 10px;
+                margin: 0; /* Rimuove il margine per l'allineamento */
+            }
+            nav ul li a {
+                padding: 10px; /* Padding per cliccare più facilmente */
+                text-align: center; /* Centra il testo */
+                display: block; /* Rende ogni link un blocco */
+            }
+            nav ul.show {
+                display: flex; /* Mostra il menu quando è attivo */
+            }
+            .hamburger {
+                display: flex; /* Mostra l'icona hamburger sui dispositivi mobili */
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr; /* Un'unica colonna sui dispositivi più piccoli */
             }
         }
     </style>
@@ -125,8 +160,13 @@
                 </a>
             </div>
             <h1>MillionErg</h1>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
             <nav>
-                <ul>
+                <ul id="nav-links">
                     <li><a href="about.html">Chi Siamo</a></li>
                     <li><a href="benefits.html">Vantaggi</a></li>
                     <li><a href="donate.html">Dona</a></li>
@@ -214,12 +254,19 @@
     <script>
         const expandBtn = document.getElementById('expand-contact-btn');
         const contactContainer = document.getElementById('contact-form-container');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
 
         expandBtn.addEventListener('click', () => {
             contactContainer.classList.toggle('expanded');
             expandBtn.textContent = contactContainer.classList.contains('expanded') 
                 ? 'Nascondi il modulo di contatto' 
                 : 'Mostra il modulo di contatto';
+        });
+
+        // Toggle the navigation menu on hamburger click
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
         });
     </script>
 
