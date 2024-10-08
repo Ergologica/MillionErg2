@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MillionErg Crowdfunding</title>
+    <title>MillionErg Crowdfunding - ERGO41</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
 
     <!-- Link Bootstrap CSS for responsive design -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,18 +17,39 @@
             margin: 0;
             padding: 0;
         }
-        .container {
-            padding: 20px;
-            margin-top: 20px;
-        }
         header {
             background-color: #333;
             color: white;
             padding: 10px 0;
-            text-align: center;
         }
-        header .logo {
-            width: 150px;
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+        }
+        .logo-container img {
+            width: 100px;
+        }
+        h1 {
+            display: inline-block;
+            margin-left: 15px;
+            vertical-align: middle;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
         }
         .input-container {
             margin-top: 20px;
@@ -43,8 +65,16 @@
             text-align: center;
         }
         @media (max-width: 768px) {
-            .goal-info {
+            .goal-info, header h1 {
                 text-align: center;
+            }
+            nav ul {
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -53,16 +83,29 @@
 <body>
     <!-- Header Section -->
     <header>
-        <div class="container">
-            <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
-            <h1>MillionErg Crowdfunding</h1>
-            <p class="lead">Aiuta a creare un milionario con la blockchain di Ergo!</p>
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-container">
+                <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
+                </a>
+            </div>
+            <h1>ERGO41</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="benefits.html">Vantaggi</a></li>
+                    <li><a href="donate.html">Dona</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="collaborate.html">Collabora con Noi</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <div class="container">
-        <h2 class="text-center">Contribuisci al progetto</h2>
+        <h2 class="text-center mt-5">Contribuisci al progetto</h2>
         <p class="text-center">Obiettivo della campagna: 50.000 ERG</p>
 
         <div class="input-container text-center">
@@ -185,7 +228,7 @@
                 outputs: [
                     { value: randomContributorPayout, address: randomContributor },
                     { value: e41Payout, address: "indirizzo_e41" },
-                    { value: chosenPayout, address: chosenAddress }
+                    { value: chosenPayout, address: "indirizzo_utente" }
                 ],
                 fee: 1000000,
                 changeAddress: changeAddr
@@ -193,19 +236,13 @@
 
             const txId = await ctx.submit_tx(tx);
             console.log("ID transazione finale inviata:", txId);
-
-            alert('La campagna è stata completata con successo!');
+            alert('La campagna è stata finalizzata!');
         }
 
-        // Aggiorna lo stato della campagna al caricamento della pagina
         document.addEventListener('DOMContentLoaded', async function () {
             await loadErgo();
             updateCampaignStatus();
         });
     </script>
-
-    <!-- Link Bootstrap JS (for better responsiveness) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
