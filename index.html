@@ -23,6 +23,7 @@
             background-color: #333;
             color: white;
             padding: 10px 0;
+            position: relative; /* Posizionamento relativo per la gestione del menu */
         }
         .container {
             max-width: 1200px;
@@ -109,14 +110,15 @@
             display: none;
             flex-direction: column;
             justify-content: space-around;
-            width: 30px;
-            height: 30px;
+            width: 40px; /* Maggiore larghezza per una migliore visibilità */
+            height: 30px; /* Altezza dell'icona hamburger */
             cursor: pointer;
+            z-index: 10; /* Assicura che l'icona sia sopra altri elementi */
         }
         .line {
-            height: 3px;
+            height: 4px; /* Spessore delle linee per una maggiore visibilità */
             width: 100%;
-            background-color: white;
+            background-color: white; /* Colore delle linee */
             transition: 0.3s;
         }
         @media (max-width: 768px) {
@@ -143,6 +145,7 @@
             }
             .hamburger {
                 display: flex; /* Mostra l'icona hamburger sui dispositivi mobili */
+                margin-right: 15px; /* Margine per separare dall'intestazione */
             }
             .benefits-grid {
                 grid-template-columns: 1fr; /* Un'unica colonna sui dispositivi più piccoli */
