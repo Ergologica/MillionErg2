@@ -4,11 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi Siamo - ERGO41</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
+
+    <!-- Link Bootstrap CSS for responsive design -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Rende il footer sempre in fondo alla pagina */
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+            flex: 1; /* Permette al contenuto di espandersi */
+        }
+        .logo-container img {
+            width: 100px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
                 <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
                     <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
@@ -17,7 +72,7 @@
             <h1>ERGO41</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li> <!-- Link alla home -->
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Chi Siamo</a></li>
                     <li><a href="benefits.html">Vantaggi</a></li>
                     <li><a href="donate.html">Dona</a></li>
@@ -30,9 +85,19 @@
     <section>
         <div class="container">
             <h2>Chi Siamo</h2>
-            <p>ERGO41 è una cooperativa decentralizzata che offre una piattaforma per il cambiamento sociale attraverso la tecnologia blockchain. Siamo un gruppo di individui impegnati a costruire un futuro migliore, equo e accessibile a tutti.</p>
+            <p>ERGO41 è una cooperativa decentralizzata che offre una piattaforma per il cambiamento sociale attraverso la tecnologia blockchain. Il nostro obiettivo è quello di fornire strumenti e risorse per supportare iniziative che promuovono l'uguaglianza e l'accesso alle opportunità per tutti. Siamo un gruppo di individui impegnati a costruire un futuro migliore, equo e accessibile a tutti, creando una rete di collaborazioni tra comunità, organizzazioni e individui.</p>
+            
             <h3>La Nostra Visione</h3>
-            <p>Immaginiamo un mondo dove le risorse siano distribuite equamente, senza intermediari. Siamo qui per facilitare questo cambiamento.</p>
+            <p>Immaginiamo un mondo dove le risorse siano distribuite equamente, senza intermediari che possano ostacolare l'accesso ai servizi essenziali. Crediamo che ogni individuo meriti l'opportunità di contribuire e beneficiare del progresso tecnologico. Siamo qui per facilitare questo cambiamento, lavorando insieme a chi condivide i nostri valori di trasparenza, integrità e innovazione.</p>
+
+            <h3>I Nostri Valori</h3>
+            <p>Ci basiamo su valori fondamentali che guidano ogni nostra azione:</p>
+            <ul>
+                <li><strong>Trasparenza:</strong> Operiamo con apertura, rendendo visibili le nostre operazioni e decisioni.</li>
+                <li><strong>Inclusività:</strong> Accogliamo tutti, senza distinzione, e incoraggiamo la partecipazione attiva nella nostra comunità.</li>
+                <li><strong>Innovazione:</strong> Utilizziamo le più recenti tecnologie per migliorare continuamente i nostri servizi e le nostre pratiche.</li>
+                <li><strong>Collaborazione:</strong> Crediamo nel potere del lavoro di squadra e della cooperazione per raggiungere obiettivi comuni.</li>
+            </ul>
         </div>
     </section>
 
