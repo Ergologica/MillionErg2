@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERGO4ONE - Costruire un Mondo Decentralizzato</title>
+    <title>ERGO4ONE - Costruire un Mondo Decentralizzato | MillionErg</title>
+    <meta name="description" content="ERGO4ONE è una DAO che promuove un mondo decentralizzato attraverso l'uso della tecnologia blockchain. Unisciti a noi per un'economia equa e trasparente.">
     <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
-
-    <!-- Link Bootstrap CSS for responsive design -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ERGO4ONE",
+      "url": "https://yourwebsite.com",
+      "logo": "https://i.ibb.co/5Y6fP4Z/ergo.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1234567890",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
 
     <style>
         body {
@@ -176,7 +190,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
                 <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo di ERGO4ONE - Piattaforma Decentralizzata" class="logo">
                 </a>
             </div>
             <h1>MillionErg</h1>
@@ -221,9 +235,7 @@
     <section id="about">
         <div class="container">
             <h2>Cosa è ERGO4ONE</h2>
-            <p>ERGO4ONE è una DAO che permette alle comunità di utilizzare equamente le risorse e ridistribuire i crediti automaticamente. Utilizzando la tecnologia blockchain, favoriamo trasparenza, sicurezza ed equità.</p>
-            <h2>Cosa è MillionErg</h2>
-            <p>MILLIONERG</p>
+            <p>ERGO4ONE è una DAO che permette alle comunità di prosperare attraverso un'economia decentralizzata e trasparente. Utilizziamo la blockchain per garantire che ogni contributo venga riconosciuto e ricompensato equamente.</p>
         </div>
     </section>
 
@@ -233,20 +245,20 @@
             <h2>I Nostri Vantaggi Chiave</h2>
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <h3>Governance Decentralizzata</h3>
-                    <p>Decisioni eque, trasparenti e guidate dalla comunità.</p>
+                    <h3>Decentralizzazione</h3>
+                    <p>Riduciamo il potere centralizzato per permettere una governance più equa.</p>
                 </div>
                 <div class="benefit-item">
-                    <h3>Privacy e Sicurezza</h3>
-                    <p>Protetta dalla blockchain e dalla crittografia all'avanguardia.</p>
+                    <h3>Trasparenza</h3>
+                    <p>Tutte le transazioni sono registrate sulla blockchain e visibili a tutti.</p>
                 </div>
                 <div class="benefit-item">
-                    <h3>Pari Opportunità</h3>
-                    <p>Creiamo una distribuzione bilanciata e equa delle risorse.</p>
+                    <h3>Equità</h3>
+                    <p>Ogni partecipante ha voce in capitolo e un'opportunità di guadagno.</p>
                 </div>
                 <div class="benefit-item">
-                    <h3>Costi di Transazione Ridotti</h3>
-                    <p>La tecnologia blockchain garantisce commissioni minime per la nostra comunità.</p>
+                    <h3>Comunità</h3>
+                    <p>Costruiamo reti solide e relazioni di fiducia tra membri.</p>
                 </div>
             </div>
         </div>
@@ -255,63 +267,43 @@
     <!-- Sezione Dona -->
     <section id="donate">
         <div class="container">
-            <h2>Sostieni la Nostra Missione</h2>
-            <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo dà potere agli individui e alle piccole imprese.</p>
-            <a href="donate.html" class="btn">Dona ERG Ora</a>
+            <h2>Supporta il Nostro Progetto</h2>
+            <p>Le donazioni aiutano a far crescere la nostra comunità e a sostenere iniziative decentralizzate. Ogni contributo è fondamentale!</p>
+            <a href="donate.html" class="btn">Dona Ora</a>
         </div>
     </section>
 
     <!-- Sezione Contatti -->
     <section id="contact">
         <div class="container">
-            <h2>Contatta ERGO4ONE</h2>
-            <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button>
-            <div id="contact-form-container" class="expandable-container">
-                <form action="#" method="post">
-                    <label for="name">Il Tuo Nome:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">La Tua Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Il Tuo Messaggio:</label>
-                    <textarea id="message" name="message" required></textarea>
-
-                    <button type="submit" class="btn">Invia Messaggio</button>
-                </form>
-            </div>
+            <h2>Contattaci</h2>
+            <p>Hai domande o desideri sapere di più? <a href="mailto:info@yourwebsite.com">Contattaci via email</a>!</p>
         </div>
     </section>
-
-    <script>
-        const expandBtn = document.getElementById('expand-contact-btn');
-        const contactContainer = document.getElementById('contact-form-container');
-        const hamburger = document.getElementById('hamburger');
-        const menuOverlay = document.getElementById('menu-overlay');
-
-        expandBtn.addEventListener('click', () => {
-            contactContainer.classList.toggle('expanded');
-            expandBtn.textContent = contactContainer.classList.contains('expanded') 
-                ? 'Nascondi il modulo di contatto' 
-                : 'Mostra il modulo di contatto';
-        });
-
-        // Toggle the navigation menu on hamburger click
-        hamburger.addEventListener('click', () => {
-            menuOverlay.classList.toggle('show');
-        });
-
-        // Close the menu overlay when clicking outside of it
-        menuOverlay.addEventListener('click', () => {
-            menuOverlay.classList.remove('show');
-        });
-    </script>
 
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
+            <p>&copy; 2024 ERGO4ONE. Tutti i diritti riservati.</p>
         </div>
     </footer>
+
+    <script>
+        // Script per gestire l'apertura e la chiusura del menu mobile
+        const hamburger = document.getElementById("hamburger");
+        const menuOverlay = document.getElementById("menu-overlay");
+
+        hamburger.addEventListener("click", () => {
+            menuOverlay.classList.toggle("show");
+        });
+
+        // Chiudi il menu quando si fa clic su un link
+        const menuLinks = document.querySelectorAll("#nav-links-mobile a");
+        menuLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                menuOverlay.classList.remove("show");
+            });
+        });
+    </script>
 </body>
 </html>
