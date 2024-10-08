@@ -63,11 +63,16 @@
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 50px; /* Spazio sopra il footer */
             padding: 20px;
             background-color: #333;
             color: white;
             text-align: center;
+        }
+
+        /* Aggiungi questa regola per far sì che il footer rimanga in fondo */
+        .content-wrapper {
+            flex: 1; /* Consente alla sezione centrale di espandersi */
         }
     </style>
 </head>
@@ -92,24 +97,26 @@
         </div>
     </header>
 
-    <section>
-        <div class="container">
-            <h2>Chi Siamo</h2>
-            <p>ERGO41 è una cooperativa decentralizzata che offre una piattaforma per il cambiamento sociale attraverso la tecnologia blockchain. Il nostro obiettivo è quello di fornire strumenti e risorse per supportare iniziative che promuovono l'uguaglianza e l'accesso alle opportunità per tutti. Siamo un gruppo di individui impegnati a costruire un futuro migliore, equo e accessibile a tutti, creando una rete di collaborazioni tra comunità, organizzazioni e individui.</p>
-            
-            <h3>La Nostra Visione</h3>
-            <p>Immaginiamo un mondo dove le risorse siano distribuite equamente, senza intermediari che possano ostacolare l'accesso ai servizi essenziali. Crediamo che ogni individuo meriti l'opportunità di contribuire e beneficiare del progresso tecnologico. Siamo qui per facilitare questo cambiamento, lavorando insieme a chi condivide i nostri valori di trasparenza, integrità e innovazione.</p>
+    <div class="content-wrapper"> <!-- Aggiungi questo contenitore per il contenuto -->
+        <section>
+            <div class="container">
+                <h2>Chi Siamo</h2>
+                <p>ERGO41 è una cooperativa decentralizzata che offre una piattaforma per il cambiamento sociale attraverso la tecnologia blockchain. Il nostro obiettivo è quello di fornire strumenti e risorse per supportare iniziative che promuovono l'uguaglianza e l'accesso alle opportunità per tutti. Siamo un gruppo di individui impegnati a costruire un futuro migliore, equo e accessibile a tutti, creando una rete di collaborazioni tra comunità, organizzazioni e individui.</p>
+                
+                <h3>La Nostra Visione</h3>
+                <p>Immaginiamo un mondo dove le risorse siano distribuite equamente, senza intermediari che possano ostacolare l'accesso ai servizi essenziali. Crediamo che ogni individuo meriti l'opportunità di contribuire e beneficiare del progresso tecnologico. Siamo qui per facilitare questo cambiamento, lavorando insieme a chi condivide i nostri valori di trasparenza, integrità e innovazione.</p>
 
-            <h3>I Nostri Valori</h3>
-            <p>Ci basiamo su valori fondamentali che guidano ogni nostra azione:</p>
-            <ul>
-                <li><strong>Trasparenza:</strong> Operiamo con apertura, rendendo visibili le nostre operazioni e decisioni.</li>
-                <li><strong>Inclusività:</strong> Accogliamo tutti, senza distinzione, e incoraggiamo la partecipazione attiva nella nostra comunità.</li>
-                <li><strong>Innovazione:</strong> Utilizziamo le più recenti tecnologie per migliorare continuamente i nostri servizi e le nostre pratiche.</li>
-                <li><strong>Collaborazione:</strong> Crediamo nel potere del lavoro di squadra e della cooperazione per raggiungere obiettivi comuni.</li>
-            </ul>
-        </div>
-    </section>
+                <h3>I Nostri Valori</h3>
+                <p>Ci basiamo su valori fondamentali che guidano ogni nostra azione:</p>
+                <ul>
+                    <li><strong>Trasparenza:</strong> Operiamo con apertura, rendendo visibili le nostre operazioni e decisioni.</li>
+                    <li><strong>Inclusività:</strong> Accogliamo tutti, senza distinzione, e incoraggiamo la partecipazione attiva nella nostra comunità.</li>
+                    <li><strong>Innovazione:</strong> Utilizziamo le più recenti tecnologie per migliorare continuamente i nostri servizi e le nostre pratiche.</li>
+                    <li><strong>Collaborazione:</strong> Crediamo nel potere del lavoro di squadra e della cooperazione per raggiungere obiettivi comuni.</li>
+                </ul>
+            </div>
+        </section>
+    </div> <!-- Chiusura del contenitore per il contenuto -->
 
     <footer>
         <div class="container">
