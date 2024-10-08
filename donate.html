@@ -37,6 +37,7 @@
         <div class="input-container">
             <input id="amount" type="number" placeholder="Inserisci l'importo in ERG" min="1">
             <button onclick="sendContribution()">Contribuisci</button>
+            <button onclick="closeCampaign()">Chiudi Campagna</button> <!-- New button for manual closure -->
         </div>
 
         <div id="status" class="status">
@@ -131,6 +132,36 @@
             updateCampaignStatus(); // Aggiorna lo stato della campagna
             amountInput.value = ''; // Resetta l'input
             alert(`Hai contribuito con ${(amount / 1e9).toFixed(2)} ERG!`);
+        }
+
+        // Funzione per chiudere manualmente la campagna
+        async function closeCampaign() {
+            // Ottieni contesto dal wallet connesso
+            const ctx = await ergoConnector.nautilus.getContext();
+
+            // Costruzione di una transazione per chiudere la campagna
+            const changeAddr = await ctx.get_change_address();
+            const utxos = await ctx.get_utxos(1000000); // Ottieni UTXO per coprire la fee
+
+            const tx = await ctx.sign_tx({
+                inputs: utxos,
+                dataInputs: [],
+                outputs: [
+                    {
+                        value: 1000000, // Solo fee per chiudere la campagna
+                        address: changeAddr, // Restituisce al proprietario
+                        additionalRegisters: {}
+                    }
+                ],
+                fee: 1000000, // 0.001 ERG di fee
+                changeAddress: changeAddr
+            });
+
+            // Invia la transazione alla rete Ergo
+            const txId = await ctx.submit_tx(tx);
+            console.log("ID transazione di chiusura inviata:", txId);
+
+            alert('La campagna è stata chiusa manualmente.');
         }
 
         // Carica lo stato della campagna al caricamento della pagina
