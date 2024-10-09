@@ -3,279 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MillionErg Crowdfunding - ERGO41</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
-
-    <!-- Link Bootstrap CSS for responsive design -->
+    <title>Dona - ERGO4ONE | Sostieni la Nostra Missione</title>
+    <meta name="description" content="Sostieni ERGO4ONE e contribuisci al cambiamento sociale attraverso le donazioni di token Ergo (ERG). Ogni contributo è importante.">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <!-- Custom CSS for additional styling -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Rende il footer sempre in fondo alla pagina */
-        }
-        
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-        }
 
-        h1 {
-            display: inline-block;
-            margin-left: 15px;
-            vertical-align: middle;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-        }
-
-        /* Style for the main content area */
-        .main-content {
-            flex: 1; /* Permette al contenuto di espandersi */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .content-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px; /* Limita la larghezza del contenitore */
-        }
-
-        .input-container {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column; /* Stack the buttons vertically */
-            align-items: center; /* Center the buttons horizontally */
-        }
-
-        .input-container button {
-            margin-top: 10px; /* Space between buttons */
-            width: 100%; /* Full width for buttons */
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                text-align: center;
-            }
-
-            nav ul {
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            nav ul li {
-                display: block;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ERGO4ONE",
+      "url": "https://yourwebsite.com",
+      "logo": "https://i.ibb.co/5Y6fP4Z/ergo.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1234567890",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo-container">
-                <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo" style="width: 100px;">
-                </a>
-            </div>
-            <h1>ERGO41</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="benefits.html">Vantaggi</a></li>
-                    <li><a href="donate.html">Dona</a></li>
-                    <li><a href="contact.html">Contatti</a></li>
-                    <li><a href="collaborate.html">Collabora con Noi</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Include lo stesso header e menu di index.html -->
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="content-container">
-            <h2 class="text-center mt-5">Contribuisci al progetto</h2>
-            <p class="text-center">Obiettivo della campagna: <strong>50.000 ERG</strong></p>
-
-            <div class="input-container text-center">
-                <input id="amount" type="number" class="form-control w-100" placeholder="Inserisci l'importo in ERG" min="1">
-                <button class="btn btn-primary" onclick="sendContribution()">Contribuisci</button>
-                <button class="btn btn-danger" onclick="finalizeCampaign()">Finalizza Campagna</button> <!-- Button to finalize campaign -->
-            </div>
-
-            <div id="status" class="status text-center mt-3">
-                <h5>Stato della campagna: <span id="campaignStatus">Caricamento...</span></h5>
-            </div>
-            
-            <div class="goal-info text-center mt-4">
-                <p>Fondi raccolti: <span id="raisedAmount">0</span> ERG</p>
-                <p>Obiettivo minimo: <span id="minGoal">50000</span> ERG</p>
-                <p>Blocco corrente: <span id="currentHeight">Caricamento...</span></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
+    <!-- Sezione Dona -->
+    <section id="donate">
         <div class="container">
-            <p>© 2024 MillionErg - Crowdfunding basato su Ergo</p>
-            <a href="https://ergoplatform.org" target="_blank" style="color:white;">Learn more about Ergo</a>
+            <h2>Sostieni la Nostra Missione</h2>
+            <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo dà potere agli individui e alle piccole imprese.</p>
+            <input id="amount" type="number" class="form-control w-50 d-inline-block" placeholder="Inserisci l'importo in ERG" min="1">
+            <button class="btn btn-primary" onclick="sendContribution()">Contribuisci</button>
+            <button class="btn btn-danger" onclick="closeCampaign()">Chiudi Campagna</button> <!-- Solo amministratore -->
+            <button class="btn btn-warning" onclick="requestRefund()">Chiedi Rimborso</button> <!-- Solo per contributori -->
         </div>
-    </footer>
+    </section>
 
-    <!-- Inclusione del SDK di Ergo -->
+    <!-- Script per interagire con Ergo -->
     <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
-
-    <!-- Custom Script -->
     <script>
-        const minToRaise = 50000000000; // 50,000 ERG in nanoERG
-        let raisedAmount = 0;        // Total funds raised
-        let currentHeight = 0;       // Current blockchain height
+        const adminAddress = "indirizzo_amministratore"; // Sostituire con l'indirizzo dell'amministratore
 
-        // Inizializza Ergo SDK e wallet
-        async function loadErgo() {
-            await ergoConnector.nautilus.connect();
-            const address = await ergoConnector.nautilus.getContext().get_change_address();
-            console.log("Indirizzo del wallet:", address);
-            return address;
-        }
+        async function closeCampaign() {
+            const ctx = await ergoConnector.nautilus.getContext();
+            const userAddress = await ctx.get_change_address();
 
-        // Aggiorna lo stato della campagna
-        async function updateCampaignStatus() {
-            const explorerUrl = "https://api.ergoplatform.com/api/v1";
-            const heightResponse = await fetch(`${explorerUrl}/blocks`);
-            const heightData = await heightResponse.json();
-            currentHeight = heightData.total - 1; // Blocco corrente
-            document.getElementById('currentHeight').textContent = currentHeight;
-
-            document.getElementById('raisedAmount').textContent = (raisedAmount / 1e9).toFixed(2);
-            document.getElementById('minGoal').textContent = (minToRaise / 1e9).toFixed(2);
-
-            const campaignStatus = document.getElementById('campaignStatus');
-            if (raisedAmount >= minToRaise) {
-                campaignStatus.textContent = 'Successo (obiettivo raggiunto)';
-            } else {
-                campaignStatus.textContent = 'In corso (contribuisci ora!)';
-            }
-        }
-
-        // Invia una transazione di contributo
-        async function sendContribution() {
-            const amountInput = document.getElementById('amount');
-            const amount = parseFloat(amountInput.value) * 1e9; // Converti ERG in nanoERG
-            const chosenAddress = prompt('Inserisci l\'indirizzo per la donazione del 10%');
-
-            if (isNaN(amount) || amount <= 0 || !chosenAddress) {
-                alert('Inserisci un importo valido e un indirizzo per la donazione.');
+            if (userAddress !== adminAddress) {
+                alert('Solo l\'amministratore può chiudere la campagna.');
                 return;
             }
 
-            const ctx = await ergoConnector.nautilus.getContext();
-            const changeAddr = await ctx.get_change_address();
-            const utxos = await ctx.get_utxos(amount);
+            const utxos = await ctx.get_utxos(1000000); 
 
             const tx = await ctx.sign_tx({
                 inputs: utxos,
                 outputs: [
                     {
-                        value: amount,
-                        address: "indirizzo_smart_contract",
-                        additionalRegisters: { R8: chosenAddress }
+                        value: 1000000,
+                        address: userAddress,
+                        additionalRegisters: {}
                     }
                 ],
                 fee: 1000000,
-                changeAddress: changeAddr
+                changeAddress: userAddress
             });
 
             const txId = await ctx.submit_tx(tx);
-            console.log("ID transazione inviata:", txId);
-
-            raisedAmount += amount;
-            updateCampaignStatus();
-            amountInput.value = ''; 
-            alert(`Hai contribuito con ${(amount / 1e9).toFixed(2)} ERG!`);
+            console.log("ID transazione di chiusura inviata:", txId);
+            alert('La campagna è stata chiusa manualmente dall\'amministratore.');
         }
 
-        // Finalizza la campagna
-        async function finalizeCampaign() {
-            if (raisedAmount < minToRaise) {
-                alert('L\'obiettivo non è stato ancora raggiunto.');
+        async function requestRefund() {
+            const ctx = await ergoConnector.nautilus.getContext();
+            const userAddress = await ctx.get_change_address();
+
+            const isGoalReached = false; 
+            if (isGoalReached) {
+                alert('Non è possibile richiedere un rimborso: la campagna ha raggiunto il suo obiettivo.');
                 return;
             }
 
-            const contributors = ["indirizzo1", "indirizzo2", "indirizzo3"];
-            const randomContributor = contributors[Math.floor(Math.random() * contributors.length)];
-
-            const totalRaised = raisedAmount;
-            const randomContributorPayout = totalRaised * 0.75;
-            const e41Payout = totalRaised * 0.15;
-            const chosenPayout = totalRaised * 0.10;
-
-            const ctx = await ergoConnector.nautilus.getContext();
-            const changeAddr = await ctx.get_change_address();
-            const utxos = await ctx.get_utxos(1000000);
+            const utxos = await ctx.get_utxos(); 
 
             const tx = await ctx.sign_tx({
                 inputs: utxos,
                 outputs: [
-                    { value: randomContributorPayout, address: randomContributor },
-                    { value: e41Payout, address: "indirizzo_e41" },
-                    { value: chosenPayout, address: "indirizzo_utente" }
+                    {
+                        value: utxos.reduce((acc, utxo) => acc + utxo.value, 0),
+                        address: userAddress,
+                        additionalRegisters: {}
+                    }
                 ],
                 fee: 1000000,
-                changeAddress: changeAddr
+                changeAddress: userAddress
             });
 
             const txId = await ctx.submit_tx(tx);
-            console.log("ID transazione finale inviata:", txId);
-            alert('La campagna è stata finalizzata!');
+            console.log("ID transazione di rimborso inviata:", txId);
+            alert('Il tuo contributo è stato rimborsato.');
         }
-
-        document.addEventListener('DOMContentLoaded', async function () {
-            await loadErgo();
-            updateCampaignStatus();
-        });
     </script>
+
+    <!-- Include lo stesso footer di index.html -->
 </body>
 </html>
