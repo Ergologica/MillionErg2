@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERGO4ONE - Costruire un Mondo Decentralizzato | MillionErg</title>
     <meta name="description" content="ERGO4ONE è una DAO che promuove un mondo decentralizzato attraverso l'uso della tecnologia blockchain. Unisciti a noi per un'economia equa e trasparente.">
-    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -22,167 +23,6 @@
       }
     }
     </script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Rende il footer sempre in fondo alla pagina */
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: relative; /* Posizionamento relativo per la gestione del menu */
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 15px;
-            flex: 1; /* Permette al contenuto di espandersi */
-        }
-        .logo-container img {
-            width: 100px;
-        }
-        h1 {
-            display: inline-block;
-            margin-left: 15px;
-            vertical-align: middle;
-        }
-        nav {
-            position: relative; /* Rende il nav relativo per il posizionamento del menu */
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        #hero {
-            background-color: #3399ff;
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-        }
-        #about, #benefits, #donate, #contact {
-            padding: 50px 0;
-        }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        .benefit-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-        }
-        .btn {
-            background-color: #0056b3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-        }
-        .expandable-container {
-            display: none;
-            margin-top: 20px;
-        }
-        .expandable-container.expanded {
-            display: block;
-        }
-
-        /* Stili per il menu a discesa */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 40px; /* Maggiore larghezza per una migliore visibilità */
-            height: 30px; /* Altezza dell'icona hamburger */
-            cursor: pointer;
-            z-index: 10; /* Assicura che l'icona sia sopra altri elementi */
-        }
-        .line {
-            height: 4px; /* Spessore delle linee per una maggiore visibilità */
-            width: 100%;
-            background-color: white; /* Colore delle linee */
-            transition: 0.3s;
-        }
-
-        /* Stili per il menu mobile */
-        .menu-overlay {
-            display: none; /* Nasconde il menu di default */
-            position: fixed; /* Posizionamento fisso per coprire l'intero schermo */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Sfondo semi-trasparente */
-            z-index: 9; /* Assicura che il menu sia sopra altri elementi */
-            flex-direction: column; /* Colonne per il menu */
-            align-items: center; /* Centra gli elementi */
-            justify-content: center; /* Centra verticalmente gli elementi */
-        }
-        .menu-overlay ul {
-            display: flex; /* Visualizza i collegamenti in una colonna */
-            flex-direction: column; /* Colonne per il menu */
-        }
-        .menu-overlay ul li {
-            margin: 20px 0; /* Margine per separare i collegamenti */
-        }
-        .menu-overlay.show {
-            display: flex; /* Mostra il menu quando è attivo */
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Nascondi il menu di navigazione */
-            }
-            nav ul li {
-                margin: 0; /* Rimuove il margine per l'allineamento */
-            }
-            nav ul li a {
-                padding: 10px; /* Padding per cliccare più facilmente */
-                text-align: center; /* Centra il testo */
-                display: block; /* Rende ogni link un blocco */
-            }
-            .hamburger {
-                display: flex; /* Mostra l'icona hamburger sui dispositivi mobili */
-                margin-right: 15px; /* Margine per separare dall'intestazione */
-            }
-            .benefits-grid {
-                grid-template-columns: 1fr; /* Un'unica colonna sui dispositivi più piccoli */
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -190,7 +30,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
                 <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo di ERGO4ONE - Piattaforma Decentralizzata" class="logo">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO4ONE" class="logo">
                 </a>
             </div>
             <h1>MillionErg</h1>
@@ -213,7 +53,7 @@
     <!-- Menu Overlay -->
     <div class="menu-overlay" id="menu-overlay">
         <nav>
-            <ul id="nav-links-mobile">
+            <ul>
                 <li><a href="about.html">Chi Siamo</a></li>
                 <li><a href="benefits.html">Vantaggi</a></li>
                 <li><a href="donate.html">Dona</a></li>
@@ -231,78 +71,23 @@
         </div>
     </section>
 
-    <!-- Sezione Chi Siamo -->
-    <section id="about">
-        <div class="container">
-            <h2>Cosa è ERGO4ONE</h2>
-            <p>ERGO4ONE è una DAO che permette alle comunità di prosperare attraverso un'economia decentralizzata e trasparente. Utilizziamo la blockchain per garantire che ogni contributo venga riconosciuto e ricompensato equamente.</p>
-        </div>
-    </section>
-
-    <!-- Sezione Vantaggi -->
-    <section id="benefits">
-        <div class="container">
-            <h2>I Nostri Vantaggi Chiave</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>Decentralizzazione</h3>
-                    <p>Riduciamo il potere centralizzato per permettere una governance più equa.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Trasparenza</h3>
-                    <p>Tutte le transazioni sono registrate sulla blockchain e visibili a tutti.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Equità</h3>
-                    <p>Ogni partecipante ha voce in capitolo e un'opportunità di guadagno.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Comunità</h3>
-                    <p>Costruiamo reti solide e relazioni di fiducia tra membri.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sezione Dona -->
-    <section id="donate">
-        <div class="container">
-            <h2>Supporta il Nostro Progetto</h2>
-            <p>Le donazioni aiutano a far crescere la nostra comunità e a sostenere iniziative decentralizzate. Ogni contributo è fondamentale!</p>
-            <a href="donate.html" class="btn">Dona Ora</a>
-        </div>
-    </section>
-
-    <!-- Sezione Contatti -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contattaci</h2>
-            <p>Hai domande o desideri sapere di più? <a href="mailto:info@yourwebsite.com">Contattaci via email</a>!</p>
-        </div>
-    </section>
-
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 ERGO4ONE. Tutti i diritti riservati.</p>
+            <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
         </div>
     </footer>
 
     <script>
-        // Script per gestire l'apertura e la chiusura del menu mobile
-        const hamburger = document.getElementById("hamburger");
-        const menuOverlay = document.getElementById("menu-overlay");
+        const hamburger = document.getElementById('hamburger');
+        const menuOverlay = document.getElementById('menu-overlay');
 
-        hamburger.addEventListener("click", () => {
-            menuOverlay.classList.toggle("show");
+        hamburger.addEventListener('click', () => {
+            menuOverlay.classList.toggle('show');
         });
 
-        // Chiudi il menu quando si fa clic su un link
-        const menuLinks = document.querySelectorAll("#nav-links-mobile a");
-        menuLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                menuOverlay.classList.remove("show");
-            });
+        menuOverlay.addEventListener('click', () => {
+            menuOverlay.classList.remove('show');
         });
     </script>
 </body>
