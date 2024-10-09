@@ -3,27 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERGO4ONE - Costruire un Mondo Decentralizzato | MillionErg</title>
-    <meta name="description" content="ERGO4ONE è una DAO che promuove un mondo decentralizzato attraverso l'uso della tecnologia blockchain. Unisciti a noi per un'economia equa, trasparente, incensurabile e instoppabile.">
+    <title>MillionErg Crowdfunding - ERGO41</title>
     <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
+
+    <!-- Link Bootstrap CSS for responsive design -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "ERGO4ONE",
-      "url": "https://yourwebsite.com",
-      "logo": "https://i.ibb.co/5Y6fP4Z/ergo.jpg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1234567890",
-        "contactType": "Customer Service"
-      }
-    }
-    </script>
-
+    
+    <!-- Custom CSS for additional styling -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,36 +18,37 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Rende il footer sempre in fondo alla pagina */
-            transition: background-color 0.5s ease; /* Transizione per il cambiamento del colore di sfondo */
+            min-height: 100vh;
+            transition: background-color 0.5s ease; /* Add transition for background-color change */
         }
         header {
             background-color: #333;
             color: white;
             padding: 10px 0;
-            position: relative; /* Posizionamento relativo per la gestione del menu */
+            position: relative;
         }
-        .container {
+        .main-container {
             max-width: 1200px;
             margin: auto;
-            padding: 0 15px;
-            flex: 1; /* Permette al contenuto di espandersi */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         .logo-container img {
             width: 100px;
-            border-radius: 50%; /* Cornice circolare */
-            border: 2px solid orange; /* Bordo arancione sottile */
+            border-radius: 50%;
+            border: 3px solid orange; /* Fine bordo arancione */
         }
         h1 {
             display: inline-block;
             margin-left: 15px;
             vertical-align: middle;
-            color: #ffffff;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
         }
         nav ul li {
             display: inline-block;
@@ -75,38 +62,11 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
-        #hero {
-            background-color: #007bff;
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-        }
-        #about, #benefits, #donate, #contact {
-            padding: 50px 0;
-        }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .input-container {
             margin-top: 20px;
         }
-        .benefit-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .btn {
-            background-color: #0056b3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #004a99;
+        .status {
+            margin-top: 20px;
         }
         footer {
             margin-top: 50px;
@@ -115,83 +75,43 @@
             color: white;
             text-align: center;
         }
-        .expandable-container {
-            display: none;
-            margin-top: 20px;
-        }
-        .expandable-container.expanded {
-            display: block;
-        }
-        /* Stili per centrare il contenuto delle sezioni Dona e Contatta */
-        #donate, #contact {
-            text-align: center;
-        }
-        #contact form {
-            max-width: 600px;
-            margin: 0 auto; /* Centra il modulo nella pagina */
-        }
-        /* Stili per il menu hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 40px;
-            height: 30px;
-            cursor: pointer;
-            z-index: 10;
-        }
-        .line {
-            height: 4px;
-            width: 100%;
-            background-color: white;
-            transition: 0.3s;
-        }
-        /* Stili per il menu mobile */
-        .menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 9;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .menu-overlay ul {
-            display: flex;
-            flex-direction: column;
-        }
-        .menu-overlay ul li {
-            margin: 20px 0;
-        }
-        .menu-overlay.show {
-            display: flex;
-        }
         @media (max-width: 768px) {
+            .goal-info, header h1 {
+                text-align: center;
+            }
             nav ul {
-                display: none;
+                text-align: center;
+                padding: 10px 0;
             }
             nav ul li {
-                margin: 0;
-            }
-            nav ul li a {
-                padding: 10px;
-                text-align: center;
                 display: block;
+                margin-bottom: 10px;
             }
-            .hamburger {
-                display: flex;
-                margin-right: 15px;
+        }
+
+        #contact-form-container {
+            transition: max-height 0.4s ease;
+            overflow: hidden;
+            max-height: 0;
+        }
+        #contact-form-container.expanded {
+            max-height: 800px; /* Sufficiently large to show the entire form */
+        }
+        @media (max-width: 768px) {
+            .form-group.row {
+                flex-direction: column;
+                align-items: stretch;
             }
-            .benefits-grid {
-                grid-template-columns: 1fr; /* Una colonna singola su dispositivi più piccoli */
+            .col-md-3 {
+                text-align: left;
+            }
+            .col-md-9 {
+                margin-top: 10px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -201,109 +121,72 @@
                     <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
                 </a>
             </div>
-            <h1>MillionErg</h1>
-            <div class="hamburger" id="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+            <h1>ERGO41</h1>
             <nav>
-                <ul id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Chi Siamo</a></li>
                     <li><a href="benefits.html">Vantaggi</a></li>
                     <li><a href="donate.html">Dona</a></li>
                     <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="collaborate.html">Collabora con Noi</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Menu Overlay -->
-    <div class="menu-overlay" id="menu-overlay">
-        <nav>
-            <ul id="nav-links-mobile">
-                <li><a href="about.html">Chi Siamo</a></li>
-                <li><a href="benefits.html">Vantaggi</a></li>
-                <li><a href="donate.html">Dona</a></li>
-                <li><a href="contact.html">Contatti</a></li>
-            </ul>
-        </nav>
+    <!-- Main Content -->
+    <div class="main-container">
+        <h2 class="text-center mt-5">Contribuisci al progetto</h2>
+        <p class="text-center">Obiettivo della campagna: 50.000 ERG</p>
+
+        <div class="input-container text-center">
+            <input id="amount" type="number" class="form-control w-50 d-inline-block" placeholder="Inserisci l'importo in ERG" min="1">
+            <button class="btn btn-primary" onclick="connectAndSendContribution()">Contribuisci</button>
+            <button class="btn btn-danger" onclick="finalizeCampaign()">Finalizza Campagna</button> <!-- Button to finalize campaign -->
+        </div>
+
+        <div id="status" class="status text-center mt-3">
+            <h5>Stato della campagna: <span id="campaignStatus">Caricamento...</span></h5>
+        </div>
+        
+        <div class="goal-info text-center mt-4">
+            <p>Fondi raccolti: <span id="raisedAmount">0</span> ERG</p>
+            <p>Obiettivo minimo: <span id="minGoal">50000</span> ERG</p>
+            <p>Blocco corrente: <span id="currentHeight">Caricamento...</span></p>
+        </div>
     </div>
-
-    <!-- Sezione Hero -->
-    <section id="hero">
-        <div class="container">
-            <h1>Costruire un Mondo Decentralizzato con MillionErg</h1>
-            <p>Una piattaforma che promuove equità, trasparenza e solidarietà sociale grazie alla tecnologia blockchain. Unisciti a noi per creare un futuro dove la partecipazione è libera, incensurabile e alla portata di tutti.</p>
-            <a href="https://t.me/millionerg24" class="btn" target="_blank" rel="noopener noreferrer">Unisciti al Movimento</a>
-        </div>
-    </section>
-
-    <!-- Sezione Chi Siamo -->
-    <section id="about">
-        <div class="container">
-            <h2>Cosa è ERGO4ONE</h2>
-            <p>ERGO4ONE è una DAO che permette alle comunità di utilizzare equamente le risorse e di ridistribuire i crediti automaticamente. Grazie alla tecnologia blockchain, ERGO4ONE favorisce trasparenza, sicurezza, privacy e incensurabilità, garantendo che tutte le attività siano libere da interferenze o censure esterne.</p>
-            <h2>Cosa è MillionErg</h2>
-            <p>MillionErg è un'iniziativa di crowdfunding basata su Ergo, che mira a costruire un'economia più equa, instoppabile e decentralizzata. Ogni contributo viene registrato in maniera trasparente, permettendo un accesso equo a tutti e senza possibilità di bloccare o censurare le attività di chi partecipa.</p>
-        </div>
-    </section>
-
-    <!-- Sezione Vantaggi -->
-    <section id="benefits">
-        <div class="container">
-            <h2>I Nostri Vantaggi Chiave</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>Governance Decentralizzata</h3>
-                    <p>Tutte le decisioni vengono prese dai membri della comunità, in maniera equa e trasparente, garantendo che ogni voce abbia un peso reale. La decentralizzazione assicura che nessuna singola entità possa prendere il controllo o censurare la piattaforma.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Privacy e Sicurezza</h3>
-                    <p>La privacy degli utenti è una priorità assoluta. Utilizziamo crittografia avanzata e registrazioni sulla blockchain per garantire che tutte le transazioni siano sicure, anonime e immutabili. Nessun dato sensibile può essere compromesso o manipolato.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Pari Opportunità</h3>
-                    <p>Crediamo in un mondo in cui le risorse devono essere accessibili a tutti, indipendentemente da dove vivono o chi siano. La nostra piattaforma consente una distribuzione bilanciata e equa delle risorse, riducendo le barriere e promuovendo un accesso equo per tutti.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Costi di Transazione Ridotti</h3>
-                    <p>Grazie alla tecnologia blockchain, riusciamo a mantenere i costi di transazione al minimo. Questo garantisce che la maggior parte dei fondi raccolti vada direttamente agli scopi prefissati, piuttosto che alle spese di intermediari o commissioni elevate.</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Incensurabilità e Instoppabilità</h3>
-                    <p>La piattaforma è progettata per essere incensurabile e instoppabile. Nessuna autorità centrale può intervenire per bloccare transazioni o limitare l'accesso, garantendo così una totale libertà di partecipazione e resistenza alla censura.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sezione Dona -->
-    <section id="donate">
-        <div class="container text-center">
-            <h2>Sostieni la Nostra Missione</h2>
-            <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo potenzia individui, piccole imprese e iniziative sociali, assicurando che ogni membro della comunità abbia un'opportunità reale di prosperare in un ambiente libero e aperto.</p>
-            <a href="donate.html" class="btn">Dona ERG Ora</a>
-        </div>
-    </section>
 
     <!-- Sezione Contatti -->
     <section id="contact">
-        <div class="container text-center">
-            <h2>Contatta ERGO4ONE</h2>
-            <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button>
+        <div class="container">
+            <div class="text-center">
+                <h2>Contatta ERGO4ONE</h2>
+                <button id="expand-contact-btn" class="btn mb-3">Mostra il modulo di contatto</button>
+            </div>
             <div id="contact-form-container" class="expandable-container">
-                <form action="#" method="post">
-                    <label for="name">Il Tuo Nome:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">La Tua Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Il Tuo Messaggio:</label>
-                    <textarea id="message" name="message" required></textarea>
-
-                    <button type="submit" class="btn">Invia Messaggio</button>
+                <form action="#" method="post" class="contact-form p-4">
+                    <div class="form-group row">
+                        <label for="name" class="col-md-3 col-form-label text-md-right">Il Tuo Nome:</label>
+                        <div class="col-md-9">
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-3 col-form-label text-md-right">La Tua Email:</label>
+                        <div class="col-md-9">
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="message" class="col-md-3 col-form-label text-md-right">Il Tuo Messaggio:</label>
+                        <div class="col-md-9">
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-3">Invia Messaggio</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -312,32 +195,85 @@
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
+            <p>© 2024 MillionErg - Crowdfunding basato su Ergo</p>
+            <a href="https://ergoplatform.org" target="_blank" style="color:white;">Learn more about Ergo</a>
         </div>
     </footer>
 
+    <!-- Inclusione del SDK di Ergo -->
+    <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
+
+    <!-- Custom Script -->
     <script>
-        const expandBtn = document.getElementById('expand-contact-btn');
-        const contactContainer = document.getElementById('contact-form-container');
-        const hamburger = document.getElementById('hamburger');
-        const menuOverlay = document.getElementById('menu-overlay');
+        const minToRaise = 50000000000; // 50,000 ERG in nanoERG
+        let raisedAmount = 0;        // Total funds raised
+        let currentHeight = 0;       // Current blockchain height
 
-        expandBtn.addEventListener('click', () => {
-            contactContainer.classList.toggle('expanded');
-            expandBtn.textContent = contactContainer.classList.contains('expanded') 
-                ? 'Nascondi il modulo di contatto' 
-                : 'Mostra il modulo di contatto';
-        });
+        // Inizializza Ergo SDK e wallet
+        async function loadErgo() {
+            try {
+                if (!ergoConnector.nautilus.isConnected) { // Check if wallet is already connected
+                    await ergoConnector.nautilus.connect(); // Connect to the user's wallet if not connected
+                }
+                const address = await ergoConnector.nautilus.getContext().get_change_address(); // Get the change address from wallet context
+                console.log("Indirizzo del wallet:", address);
+                return address;
+            } catch (error) {
+                console.error("Errore durante la connessione al wallet:", error); // Log an error if wallet connection fails
+            }
+        }
 
-        // Toggle the navigation menu on hamburger click
-        hamburger.addEventListener('click', () => {
-            menuOverlay.classList.toggle('show');
-        });
+        // Aggiorna lo stato della campagna
+        async function updateCampaignStatus() {
+            try {
+                const explorerUrl = "https://api.ergoplatform.com/api/v1"; // URL for Ergo blockchain explorer
+                const heightResponse = await fetch(`${explorerUrl}/blocks`); // Fetch current blockchain height
+                const heightData = await heightResponse.json();
+                currentHeight = heightData.total - 1; // Get the current block height
+                document.getElementById('currentHeight').textContent = currentHeight; // Update the UI with the current block height
 
-        // Close the menu overlay when clicking outside of it
-        menuOverlay.addEventListener('click', () => {
-            menuOverlay.classList.remove('show');
-        });
-    </script>
-</body>
-</html>
+                document.getElementById('raisedAmount').textContent = (raisedAmount / 1e9).toFixed(2); // Display total funds raised in ERG
+                document.getElementById('minGoal').textContent = (minToRaise / 1e9).toFixed(2); // Display minimum goal in ERG
+
+                const campaignStatus = document.getElementById('campaignStatus');
+                if (raisedAmount >= minToRaise) {
+                    campaignStatus.textContent = 'Successo (obiettivo raggiunto)'; // Update status if goal is reached
+                } else {
+                    campaignStatus.textContent = 'In corso (contribuisci ora!)'; // Campaign is still active
+                }
+            } catch (error) {
+                console.error("Errore durante l'aggiornamento dello stato della campagna:", error); // Log an error if fetching the block height fails
+            }
+        }
+
+        // Connetti e invia un contributo
+        async function connectAndSendContribution() {
+            try {
+                // Connect wallet if not already connected
+                await loadErgo();
+                // Proceed to send the contribution
+                await sendContribution();
+            } catch (error) {
+                console.error("Errore durante la connessione e il contributo:", error);
+                alert('Errore durante la connessione al wallet. Assicurati che sia collegato e riprova.');
+            }
+        }
+
+        // Invia una transazione di contributo
+        async function sendContribution() {
+            const amountInput = document.getElementById('amount');
+            let amount = parseFloat(amountInput.value) * 1e9; // Convert ERG to nanoERG
+            const chosenAddress = prompt('Inserisci l\'indirizzo per la donazione del 10%');
+
+            // Validate input to ensure valid contribution amount and chosen address
+            if (isNaN(amount) || amount <= 0 || amount > 1e12 || !chosenAddress) { // Validate input, disallow negative numbers, zero, excessively large values
+                alert('Inserisci un importo valido (compreso tra 1 e 1.000.000 ERG) e un indirizzo per la donazione.');
+                return;
+            }
+
+            try {
+                const ctx = await ergoConnector.nautilus.getContext(); // Get wallet context
+                const changeAddr = await ctx.get_change_address(); // Get the change address
+                const utxos = await ctx.get_utxos(amount); // Get UTXOs to cover the transaction amount
+
+                //
