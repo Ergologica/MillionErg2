@@ -23,6 +23,154 @@
       }
     }
     </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+            flex: 1;
+        }
+        .logo-container img {
+            width: 100px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        #hero {
+            background-color: #007bff;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        #about, #benefits, #donate, #contact {
+            padding: 50px 0;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .benefit-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .btn {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #004080;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        .expandable-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .expandable-container.expanded {
+            display: block;
+        }
+
+        /* Stili per il menu a discesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 40px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .line {
+            height: 4px;
+            width: 100%;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        /* Stili per il menu mobile */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-overlay ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .menu-overlay ul li {
+            margin: 20px 0;
+        }
+        .menu-overlay.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -30,7 +178,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
                 <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO4ONE" class="logo">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
                 </a>
             </div>
             <h1>MillionErg</h1>
@@ -53,7 +201,7 @@
     <!-- Menu Overlay -->
     <div class="menu-overlay" id="menu-overlay">
         <nav>
-            <ul>
+            <ul id="nav-links-mobile">
                 <li><a href="about.html">Chi Siamo</a></li>
                 <li><a href="benefits.html">Vantaggi</a></li>
                 <li><a href="donate.html">Dona</a></li>
@@ -71,6 +219,72 @@
         </div>
     </section>
 
+    <!-- Sezione Chi Siamo -->
+    <section id="about">
+        <div class="container">
+            <h2>Cosa è ERGO4ONE</h2>
+            <p>ERGO4ONE è una DAO che permette alle comunità di utilizzare equamente le risorse e ridistribuire i crediti automaticamente. Utilizzando la tecnologia blockchain, favoriamo trasparenza, sicurezza ed equità.</p>
+            <h2>Cosa è MillionErg</h2>
+            <p>MillionErg è un'iniziativa per raccogliere fondi decentralizzati che vengono ridistribuiti per premiare i contributori in modo equo e trasparente, creando nuovi milionari e sostenendo progetti sociali.</p>
+        </div>
+    </section>
+
+    <!-- Sezione Vantaggi -->
+    <section id="benefits">
+        <div class="container">
+            <h2>I Nostri Vantaggi Chiave</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Governance Decentralizzata</h3>
+                    <p>Decisioni eque, trasparenti e guidate dalla comunità, garantendo che ogni membro abbia una voce e possa contribuire attivamente.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Privacy e Sicurezza</h3>
+                    <p>La blockchain protegge le transazioni e garantisce privacy grazie alla crittografia avanzata, mantenendo i dati degli utenti al sicuro.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Pari Opportunità</h3>
+                    <p>Creiamo una distribuzione bilanciata delle risorse, assicurando pari opportunità di accesso per tutti i partecipanti.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Costi di Transazione Ridotti</h3>
+                    <p>La nostra tecnologia garantisce commissioni basse per le transazioni, consentendo a tutti di partecipare senza costi elevati.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Dona -->
+    <section id="donate">
+        <div class="container">
+            <h2>Sostieni la Nostra Missione</h2>
+            <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo dà potere agli individui e alle piccole imprese.</p>
+            <a href="donate.html" class="btn">Dona ERG Ora</a>
+        </div>
+    </section>
+
+    <!-- Sezione Contatti -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contatta ERGO4ONE</h2>
+            <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button>
+            <div id="contact-form-container" class="expandable-container">
+                <form action="#" method="post">
+                    <label for="name">Il Tuo Nome:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">La Tua Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Il Tuo Messaggio:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit" class="btn">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Section -->
     <footer>
         <div class="container">
@@ -79,13 +293,24 @@
     </footer>
 
     <script>
+        const expandBtn = document.getElementById('expand-contact-btn');
+        const contactContainer = document.getElementById('contact-form-container');
         const hamburger = document.getElementById('hamburger');
         const menuOverlay = document.getElementById('menu-overlay');
 
+        expandBtn.addEventListener('click', () => {
+            contactContainer.classList.toggle('expanded');
+            expandBtn.textContent = contactContainer.classList.contains('expanded') 
+                ? 'Nascondi il modulo di contatto' 
+                : 'Mostra il modulo di contatto';
+        });
+
+        // Toggle the navigation menu on hamburger click
         hamburger.addEventListener('click', () => {
             menuOverlay.classList.toggle('show');
         });
 
+        // Close the menu overlay when clicking outside of it
         menuOverlay.addEventListener('click', () => {
             menuOverlay.classList.remove('show');
         });
