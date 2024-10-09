@@ -19,6 +19,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: background-color 0.5s ease; /* Add transition for background-color change */
         }
         header {
             background-color: #333;
@@ -26,11 +27,14 @@
             padding: 10px 0;
             position: relative;
         }
-        .container {
+        .main-container {
             max-width: 1200px;
             margin: auto;
-            padding: 0 15px;
-            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         .logo-container img {
             width: 100px;
@@ -109,7 +113,7 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="main-container">
         <h2 class="text-center mt-5">Contribuisci al progetto</h2>
         <p class="text-center">Obiettivo della campagna: 50.000 ERG</p>
 
@@ -148,7 +152,9 @@
         // Inizializza Ergo SDK e wallet
         async function loadErgo() {
             try {
-                await ergoConnector.nautilus.connect(); // Connect to the user's wallet
+                if (!ergoConnector.nautilus.isConnected) { // Check if wallet is already connected
+                    await ergoConnector.nautilus.connect(); // Connect to the user's wallet if not connected
+                }
                 const address = await ergoConnector.nautilus.getContext().get_change_address(); // Get the change address from wallet context
                 console.log("Indirizzo del wallet:", address);
                 return address;
@@ -232,6 +238,12 @@
                 updateCampaignStatus(); // Update campaign status
                 amountInput.value = ''; // Reset input field
                 alert(`Hai contribuito con ${(amount / 1e9).toFixed(2)} ERG!`);
+
+                // Change background color and display a notification
+                document.body.style.backgroundColor = '#d4edda'; // Change to light green to indicate success
+                setTimeout(() => {
+                    alert('Transazione completata con successo! Grazie per il tuo contributo.');
+                }, 500);
             } catch (error) {
                 console.error("Errore durante l'invio della transazione:", error);
                 alert('Errore durante l\'invio della transazione. Per favore riprova.');
