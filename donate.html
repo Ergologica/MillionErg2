@@ -115,7 +115,7 @@
 
         <div class="input-container text-center">
             <input id="amount" type="number" class="form-control w-50 d-inline-block" placeholder="Inserisci l'importo in ERG" min="1">
-            <button class="btn btn-primary" onclick="sendContribution()">Contribuisci</button>
+            <button class="btn btn-primary" onclick="connectAndSendContribution()">Contribuisci</button>
             <button class="btn btn-danger" onclick="finalizeCampaign()">Finalizza Campagna</button> <!-- Button to finalize campaign -->
         </div>
 
@@ -180,14 +180,28 @@
             }
         }
 
+        // Connetti e invia un contributo
+        async function connectAndSendContribution() {
+            try {
+                // Connect wallet if not already connected
+                await loadErgo();
+                // Proceed to send the contribution
+                await sendContribution();
+            } catch (error) {
+                console.error("Errore durante la connessione e il contributo:", error);
+                alert('Errore durante la connessione al wallet. Assicurati che sia collegato e riprova.');
+            }
+        }
+
         // Invia una transazione di contributo
         async function sendContribution() {
             const amountInput = document.getElementById('amount');
-            const amount = parseFloat(amountInput.value) * 1e9; // Convert ERG to nanoERG
+            let amount = parseFloat(amountInput.value) * 1e9; // Convert ERG to nanoERG
             const chosenAddress = prompt('Inserisci l\'indirizzo per la donazione del 10%');
 
-            if (isNaN(amount) || amount <= 0 || !chosenAddress) { // Validate input
-                alert('Inserisci un importo valido e un indirizzo per la donazione.');
+            // Validate input to ensure valid contribution amount and chosen address
+            if (isNaN(amount) || amount <= 0 || amount > 1e12 || !chosenAddress) { // Validate input, disallow negative numbers, zero, excessively large values
+                alert('Inserisci un importo valido (compreso tra 1 e 1.000.000 ERG) e un indirizzo per la donazione.');
                 return;
             }
 
@@ -212,65 +226,61 @@
 
                 // Submit the transaction
                 const txId = await ctx.submit_tx(tx);
-                console.log("ID transazione inviata:", txId); // Log transaction ID
+                console.log("ID transazione inviata:", txId);
 
-                raisedAmount += amount; // Update the total amount raised
-                updateCampaignStatus(); // Update the campaign status in the UI
-                amountInput.value = ''; // Clear the input field
-                alert(`Hai contribuito con ${(amount / 1e9).toFixed(2)} ERG!`); // Notify user of successful contribution
+                raisedAmount += amount; // Update total funds raised
+                updateCampaignStatus(); // Update campaign status
+                amountInput.value = ''; // Reset input field
+                alert(`Hai contribuito con ${(amount / 1e9).toFixed(2)} ERG!`);
             } catch (error) {
-                console.error("Errore durante l'invio del contributo:", error); // Log an error if transaction fails
-                alert('Errore durante l'invio del contributo. Riprova.');
+                console.error("Errore durante l'invio della transazione:", error);
+                alert('Errore durante l'invio della transazione. Per favore riprova.');
             }
         }
 
         // Finalizza la campagna
         async function finalizeCampaign() {
-            if (raisedAmount < minToRaise) { // Check if campaign goal is met
+            if (raisedAmount < minToRaise) {
                 alert('L'obiettivo non è stato ancora raggiunto.');
                 return;
             }
 
+            const contributors = ["indirizzo1", "indirizzo2", "indirizzo3"];
+            const randomContributor = contributors[Math.floor(Math.random() * contributors.length)];
+
+            const totalRaised = raisedAmount;
+            const randomContributorPayout = totalRaised * 0.75;
+            const e41Payout = totalRaised * 0.15;
+            const chosenPayout = totalRaised * 0.10;
+
             try {
-                // Mock contributor addresses - these should be dynamically obtained in a real scenario
-                const contributors = ["indirizzo1", "indirizzo2", "indirizzo3"];
-                const randomContributor = contributors[Math.floor(Math.random() * contributors.length)]; // Select a random contributor
+                const ctx = await ergoConnector.nautilus.getContext();
+                const changeAddr = await ctx.get_change_address();
+                const utxos = await ctx.get_utxos(1000000);
 
-                const totalRaised = raisedAmount;
-                const randomContributorPayout = totalRaised * 0.75; // 75% to a random contributor
-                const e41Payout = totalRaised * 0.15; // 15% to ERGO41
-                const chosenPayout = totalRaised * 0.10; // 10% to the chosen address
-
-                const ctx = await ergoConnector.nautilus.getContext(); // Get wallet context
-                const changeAddr = await ctx.get_change_address(); // Get the change address
-                const utxos = await ctx.get_utxos(1000000); // Get UTXOs to cover transaction fee
-
-                // Construct and sign the transaction for final distribution
                 const tx = await ctx.sign_tx({
                     inputs: utxos,
                     outputs: [
-                        { value: randomContributorPayout, address: randomContributor }, // Payout to random contributor
-                        { value: e41Payout, address: "indirizzo_e41" }, // Payout to ERGO41
-                        { value: chosenPayout, address: "indirizzo_utente" } // Payout to chosen address
+                        { value: randomContributorPayout, address: randomContributor },
+                        { value: e41Payout, address: "indirizzo_e41" },
+                        { value: chosenPayout, address: "indirizzo_utente" }
                     ],
-                    fee: 1000000, // Transaction fee in nanoERG
-                    changeAddress: changeAddr // Change address
+                    fee: 1000000,
+                    changeAddress: changeAddr
                 });
 
-                // Submit the transaction
                 const txId = await ctx.submit_tx(tx);
-                console.log("ID transazione finale inviata:", txId); // Log transaction ID
-                alert('La campagna è stata finalizzata!'); // Notify user of successful finalization
+                console.log("ID transazione finale inviata:", txId);
+                alert('La campagna è stata finalizzata!');
             } catch (error) {
-                console.error("Errore durante la finalizzazione della campagna:", error); // Log an error if finalization fails
-                alert('Errore durante la finalizzazione della campagna. Riprova.');
+                console.error("Errore durante la finalizzazione della campagna:", error);
+                alert('Errore durante la finalizzazione della campagna. Per favore riprova.');
             }
         }
 
-        // Load wallet and update campaign status when the page loads
         document.addEventListener('DOMContentLoaded', async function () {
-            await loadErgo(); // Initialize the wallet connection
-            updateCampaignStatus(); // Update the campaign status in the UI
+            await loadErgo();
+            updateCampaignStatus();
         });
     </script>
 </body>
