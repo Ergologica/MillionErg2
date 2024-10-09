@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collabora con Noi - ERGO4ONE | Partnership e Collaborazione</title>
-    <meta name="description" content="Collabora con ERGO4ONE per una soluzione decentralizzata e trasparente che aiuti le organizzazioni a distribuire token e beni essenziali in modo efficace e sicuro.">
+    <title>Collabora con Noi - ERGO4ONE | Sostieni il Cambiamento</title>
+    <meta name="description" content="Collabora con ERGO4ONE per sostenere l'uso delle risorse in modo equo e decentralizzato. Unisciti a noi per un mondo migliore.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -23,6 +23,123 @@
       }
     }
     </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+            flex: 1;
+        }
+        .logo-container img {
+            width: 100px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #004080;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        /* Stili per il menu a discesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 40px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .line {
+            height: 4px;
+            width: 100%;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        /* Stili per il menu mobile */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-overlay ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .menu-overlay ul li {
+            margin: 20px 0;
+        }
+        .menu-overlay.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -30,7 +147,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
                 <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO4ONE" class="logo">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
                 </a>
             </div>
             <h1>MillionErg</h1>
@@ -54,7 +171,7 @@
     <!-- Menu Overlay -->
     <div class="menu-overlay" id="menu-overlay">
         <nav>
-            <ul>
+            <ul id="nav-links-mobile">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">Chi Siamo</a></li>
                 <li><a href="benefits.html">Vantaggi</a></li>
@@ -72,10 +189,10 @@
         <h2>Perché Collaborare con Noi?</h2>
         <p>Il nostro sistema ti consente di:</p>
         <ul>
-            <li><strong>Distribuire Token di Partecipazione:</strong> Rendi le tue attività più coinvolgenti, consentendo ai partecipanti di ricevere token che possono essere utilizzati per vari benefici, come accedere a eventi speciali o ricevere supporto per necessità essenziali.</li>
-            <li><strong>Ritirare Merci:</strong> Gestisci il ritiro di beni come cibo, bevande e materiali didattici in modo semplice e trasparente, garantendo una distribuzione equa a tutti i membri che ne hanno bisogno.</li>
-            <li><strong>Automazione dei Processi:</strong> Riduci il carico di lavoro del tuo team grazie a un sistema automatizzato che semplifica la distribuzione e la gestione dei beni, migliorando l'efficienza operativa e riducendo al minimo gli errori.</li>
-            <li><strong>Massima Trasparenza:</strong> Rendi il tuo operato chiaro e visibile, aumentando la fiducia nella tua associazione e consentendo ai tuoi sostenitori di vedere l'impatto delle loro donazioni in tempo reale.</li>
+            <li><strong>Distribuire Token di Partecipazione:</strong> Rendi le tue attività più coinvolgenti, consentendo ai partecipanti di ricevere token che possono essere utilizzati per vari benefici.</li>
+            <li><strong>Ritirare Merci:</strong> Gestisci il ritiro di beni come cibo, bevande e materiali didattici in modo semplice e trasparente.</li>
+            <li><strong>Automazione dei Processi:</strong> Riduci il carico di lavoro grazie a un sistema automatizzato che semplifica la distribuzione e la gestione dei beni.</li>
+            <li><strong>Massima Trasparenza:</strong> Rendi il tuo operato chiaro e visibile, aumentando la fiducia nella tua associazione.</li>
         </ul>
 
         <h2>Contattaci per Maggiori Informazioni</h2>
@@ -84,9 +201,9 @@
         <h2>Seguici sui Social Media</h2>
         <p>Rimani aggiornato sulle ultime novità e sulle opportunità di collaborazione seguendo i nostri profili sui social media:</p>
         <ul>
-            <li><a href="https://twitter.com/ergo_platform" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-            <li><a href="https://github.com/ergoplatform" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/company/ergoplatform/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://twitter.com/ergo_platform" target="_blank">Twitter</a></li>
+            <li><a href="https://github.com/ergoplatform" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/company/ergoplatform/" target="_blank">LinkedIn</a></li>
         </ul>
     </div>
 
@@ -94,12 +211,11 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
-            <a href="https://ergoplatform.org/" target="_blank" rel="noopener noreferrer">Learn more about Ergo</a>
         </div>
     </footer>
 
-    <!-- Script per il menu hamburger -->
     <script>
+        // Script per gestire l'apertura e la chiusura del menu mobile
         const hamburger = document.getElementById('hamburger');
         const menuOverlay = document.getElementById('menu-overlay');
 
