@@ -3,28 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Siamo - ERGO4ONE | Informazioni su di Noi</title>
-    <meta name="description" content="Scopri di più su ERGO4ONE, una piattaforma DAO che promuove equità e trasparenza attraverso l'uso della tecnologia blockchain.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Chi Siamo - ERGO41</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
+
+    <!-- Link Bootstrap CSS for responsive design -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "ERGO4ONE",
-      "url": "https://yourwebsite.com",
-      "logo": "https://i.ibb.co/5Y6fP4Z/ergo.jpg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1234567890",
-        "contactType": "Customer Service"
-      }
-    }
-    </script>
-
     <style>
+        /* General Reset and Body Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
@@ -32,54 +18,57 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100vh; /* Ensures footer stays at the bottom */
         }
+
+        /* Header Styles */
         header {
             background-color: #333;
             color: white;
             padding: 10px 0;
-            position: relative;
         }
+
+        /* Container to ensure max-width and center alignment */
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 0 15px;
-            flex: 1;
+            flex: 1; /* Ensures the content expands */
         }
+
+        /* Logo Image */
         .logo-container img {
             width: 100px;
         }
+
+        /* Heading Styles */
         h1, h2, h3 {
             color: #333;
         }
+
+        /* Navigation Styles */
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            display: flex;
+            margin-bottom: 0;
         }
+
         nav ul li {
-            display: inline-block;
             margin-right: 20px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
+
         nav ul li a:hover {
             text-decoration: underline;
         }
-        .btn {
-            background-color: #0056b3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #004080;
-        }
+
+        /* Footer Styles */
         footer {
             margin-top: 50px;
             padding: 20px;
@@ -88,55 +77,26 @@
             text-align: center;
         }
 
-        /* Stili per il menu a discesa */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 40px;
-            height: 30px;
-            cursor: pointer;
-            z-index: 10;
-        }
-        .line {
-            height: 4px;
-            width: 100%;
-            background-color: white;
-            transition: 0.3s;
+        /* Ensures footer is pushed to the bottom */
+        .content-wrapper {
+            flex: 1; /* Makes the content area flexible */
         }
 
-        /* Stili per il menu mobile */
-        .menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 9;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .menu-overlay ul {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-        .menu-overlay ul li {
-            margin: 20px 0;
-        }
-        .menu-overlay.show {
-            display: flex;
-        }
-
+        /* Media Query for Responsive Design */
         @media (max-width: 768px) {
             nav ul {
-                display: none;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
-            .hamburger {
-                display: flex;
+
+            nav ul li {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+
+            header {
+                text-align: center;
             }
         }
     </style>
@@ -150,14 +110,9 @@
                     <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
                 </a>
             </div>
-            <h1>MillionErg</h1>
-            <div class="hamburger" id="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+            <h1 class="h1">ERGO41</h1>
             <nav>
-                <ul id="nav-links">
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Chi Siamo</a></li>
                     <li><a href="benefits.html">Vantaggi</a></li>
@@ -168,61 +123,42 @@
         </div>
     </header>
 
-    <!-- Menu Overlay -->
-    <div class="menu-overlay" id="menu-overlay">
-        <nav>
-            <ul id="nav-links-mobile">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Chi Siamo</a></li>
-                <li><a href="benefits.html">Vantaggi</a></li>
-                <li><a href="donate.html">Dona</a></li>
-                <li><a href="contact.html">Contatti</a></li>
-            </ul>
-        </nav>
-    </div>
+    <!-- Content Section -->
+    <div class="content-wrapper">
+        <section>
+            <div class="container">
+                <h2>Chi Siamo</h2>
+                <p>ERGO41 è una cooperativa decentralizzata che offre una piattaforma per il cambiamento sociale attraverso la tecnologia blockchain. Il nostro obiettivo è quello di fornire strumenti e risorse per supportare iniziative che promuovono l'uguaglianza e l'accesso alle opportunità per tutti. Siamo un gruppo di individui impegnati a costruire un futuro migliore, equo e accessibile a tutti, creando una rete di collaborazioni tra comunità, organizzazioni e individui.</p>
+                
+                <h3>La Nostra Visione</h3>
+                <p>Immaginiamo un mondo dove le risorse siano distribuite equamente, senza intermediari che possano ostacolare l'accesso ai servizi essenziali. Crediamo che ogni individuo meriti l'opportunità di contribuire e beneficiare del progresso tecnologico. Siamo qui per facilitare questo cambiamento, lavorando insieme a chi condivide i nostri valori di trasparenza, integrità e innovazione.</p>
 
-    <!-- Sezione Chi Siamo -->
-    <section id="about">
-        <div class="container">
-            <h2>Chi Siamo</h2>
-            <p>ERGO4ONE è una cooperativa decentralizzata che offre una piattaforma per il cambiamento sociale attraverso la tecnologia blockchain. Siamo un gruppo di individui impegnati a costruire un futuro migliore, equo e accessibile a tutti.</p>
-            <h3>La Nostra Visione</h3>
-            <p>Immaginiamo un mondo dove le risorse siano distribuite equamente, senza intermediari. Siamo qui per facilitare questo cambiamento, utilizzando la blockchain per creare trasparenza e garantire che tutti abbiano le stesse opportunità.</p>
-            <h3>La Nostra Missione</h3>
-            <p>La nostra missione è fornire alle comunità gli strumenti necessari per avere il controllo delle risorse in modo autonomo e decentralizzato. Crediamo che attraverso la cooperazione e la tecnologia blockchain, sia possibile costruire una società più giusta e prospera, dove ogni individuo possa avere accesso equo alle risorse e partecipare al processo decisionale.</p>
-            <h3>I Nostri Valori</h3>
-            <ul>
-                <li><strong>Equità:</strong> Crediamo nella giustizia e nell'accesso equo alle risorse per tutti.</li>
-                <li><strong>Trasparenza:</strong> La blockchain ci aiuta a garantire che tutte le transazioni siano chiare e verificabili.</li>
-                <li><strong>Autonomia:</strong> Promuoviamo la decentralizzazione per ridurre la dipendenza dagli intermediari e mettere il potere nelle mani delle comunità.</li>
-                <li><strong>Collaborazione:</strong> Favoriamo la collaborazione e la condivisione delle conoscenze per crescere insieme come comunità globale.</li>
-            </ul>
-        </div>
-    </section>
+                <h3>I Nostri Valori</h3>
+                <p>Ci basiamo su valori fondamentali che guidano ogni nostra azione:</p>
+                <ul>
+                    <li><strong>Trasparenza:</strong> Operiamo con apertura, rendendo visibili le nostre operazioni e decisioni.</li>
+                    <li><strong>Inclusività:</strong> Accogliamo tutti, senza distinzione, e incoraggiamo la partecipazione attiva nella nostra comunità.</li>
+                    <li><strong>Innovazione:</strong> Utilizziamo le più recenti tecnologie per migliorare continuamente i nostri servizi e le nostre pratiche.</li>
+                    <li><strong>Collaborazione:</strong> Crediamo nel potere del lavoro di squadra e della cooperazione per raggiungere obiettivi comuni.</li>
+                </ul>
+
+                <h3>Instoppabilità</h3>
+                <p>Grazie all'infrastruttura di Ergo, ERGO41 è progettata per essere instoppabile. Le transazioni e le attività della rete sono resilienti e indipendenti da entità centrali. La blockchain di Ergo consente di creare contratti intelligenti e applicazioni decentralizzate che non possono essere fermate o controllate da nessuno, garantendo la continuità delle operazioni anche in ambienti ostili o sotto tentativi di censura.</p>
+
+                <h3>Incensurabilità</h3>
+                <p>L'incensurabilità è un pilastro fondamentale della nostra piattaforma. Utilizzando Ergo, garantiamo che nessuna transazione o contratto possa essere bloccato o censurato da terze parti. La blockchain di Ergo è costruita per resistere a qualsiasi tentativo di controllo, permettendo agli utenti di interagire liberamente e senza paura di interferenze esterne. Questo assicura che i nostri servizi siano accessibili a tutti, indipendentemente dalle pressioni politiche o economiche.</p>
+
+                <h3>Privacy</h3>
+                <p>La privacy è uno degli aspetti più importanti su cui si fonda ERGO41. Grazie alla crittografia avanzata e alle tecnologie integrate nella blockchain di Ergo, gli utenti possono essere sicuri che le loro transazioni e i loro dati personali siano protetti. La privacy non è solo una caratteristica opzionale, ma una componente essenziale per garantire la sicurezza e l'autonomia degli utenti, offrendo strumenti come le transazioni anonime e la protezione dei dati sensibili.</p>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
+            <p>&copy; 2024 ERGO41. Tutti i Diritti Riservati.</p>
         </div>
     </footer>
-
-    <script>
-        // Script per gestire l'apertura e la chiusura del menu mobile
-        const hamburger = document.getElementById('hamburger');
-        const menuOverlay = document.getElementById('menu-overlay');
-
-        hamburger.addEventListener('click', () => {
-            menuOverlay.classList.toggle('show');
-        });
-
-        // Chiudi il menu quando si fa clic su un link
-        const menuLinks = document.querySelectorAll("#menu-overlay a");
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuOverlay.classList.remove('show');
-            });
-        });
-    </script>
 </body>
 </html>
