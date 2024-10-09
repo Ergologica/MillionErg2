@@ -234,40 +234,58 @@
                 alert(`Hai contribuito con ${(amount / 1e9).toFixed(2)} ERG!`);
             } catch (error) {
                 console.error("Errore durante l'invio della transazione:", error);
-                alert('Errore durante l'invio della transazione. Per favore riprova.');
+                alert('Errore durante l\'invio della transazione. Per favore riprova.');
             }
         }
 
         // Finalizza la campagna
         async function finalizeCampaign() {
             if (raisedAmount < minToRaise) {
-                alert('L'obiettivo non è stato ancora raggiunto.');
+                alert('L\'obiettivo non è stato ancora raggiunto.');
                 return;
             }
-
-            const contributors = ["indirizzo1", "indirizzo2", "indirizzo3"];
-            const randomContributor = contributors[Math.floor(Math.random() * contributors.length)];
-
-            const totalRaised = raisedAmount;
-            const randomContributorPayout = totalRaised * 0.75;
-            const e41Payout = totalRaised * 0.15;
-            const chosenPayout = totalRaised * 0.10;
 
             try {
                 const ctx = await ergoConnector.nautilus.getContext();
                 const changeAddr = await ctx.get_change_address();
                 const utxos = await ctx.get_utxos(1000000);
 
-                const tx = await ctx.sign_tx({
-                    inputs: utxos,
-                    outputs: [
-                        { value: randomContributorPayout, address: randomContributor },
-                        { value: e41Payout, address: "indirizzo_e41" },
-                        { value: chosenPayout, address: "indirizzo_utente" }
-                    ],
-                    fee: 1000000,
-                    changeAddress: changeAddr
-                });
+                // Retrieve contributors dynamically (placeholder for future dynamic logic)
+                const contributors = await getContributors();
+                const randomContributor = contributors[Math.floor(Math.random() * contributors.length)];
+
+                const totalRaised = raisedAmount;
+                const randomContributorPayout = totalRaised * 0.75;
+                const e41Payout = totalRaised * 0.15;
+                const chosenPayout = totalRaised * 0.10;
+
+                // Construct and sign the transaction with retry mechanism
+                let tx;
+                let retryCount = 0;
+                const maxRetries = 3;
+
+                while (retryCount < maxRetries) {
+                    try {
+                        tx = await ctx.sign_tx({
+                            inputs: utxos,
+                            outputs: [
+                                { value: randomContributorPayout, address: randomContributor },
+                                { value: e41Payout, address: "indirizzo_e41" },
+                                { value: chosenPayout, address: "indirizzo_utente" }
+                            ],
+                            fee: 1000000,
+                            changeAddress: changeAddr
+                        });
+                        break; // Exit loop if signing is successful
+                    } catch (signError) {
+                        retryCount++;
+                        console.error(`Tentativo ${retryCount} di firma della transazione fallito:`, signError);
+                        if (retryCount >= maxRetries) {
+                            alert('Errore durante la firma della transazione. Per favore riprova più tardi.');
+                            return;
+                        }
+                    }
+                }
 
                 const txId = await ctx.submit_tx(tx);
                 console.log("ID transazione finale inviata:", txId);
@@ -276,6 +294,12 @@
                 console.error("Errore durante la finalizzazione della campagna:", error);
                 alert('Errore durante la finalizzazione della campagna. Per favore riprova.');
             }
+        }
+
+        // Placeholder function to simulate retrieving contributors dynamically
+        async function getContributors() {
+            // In a real implementation, this function should fetch contributors from a server or blockchain
+            return ["indirizzo1", "indirizzo2", "indirizzo3"];
         }
 
         document.addEventListener('DOMContentLoaded', async function () {
