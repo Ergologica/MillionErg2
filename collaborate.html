@@ -3,63 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collabora con Noi - ERGO41</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS principale -->
-
-    <!-- Link Bootstrap CSS for responsive design -->
+    <title>Collabora con Noi - ERGO4ONE | Partnership e Collaborazione</title>
+    <meta name="description" content="Collabora con ERGO4ONE per una soluzione decentralizzata e trasparente che aiuti le organizzazioni a distribuire token e beni essenziali in modo efficace e sicuro.">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Rende il footer sempre in fondo alla pagina */
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 15px;
-            flex: 1; /* Permette al contenuto di espandersi */
-        }
-        .logo-container img {
-            width: 100px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-        }
-    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ERGO4ONE",
+      "url": "https://yourwebsite.com",
+      "logo": "https://i.ibb.co/5Y6fP4Z/ergo.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1234567890",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Header Section -->
@@ -67,12 +30,17 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
                 <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO4ONE" class="logo">
                 </a>
             </div>
-            <h1>ERGO41</h1>
+            <h1>MillionErg</h1>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
             <nav>
-                <ul>
+                <ul id="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Chi Siamo</a></li>
                     <li><a href="benefits.html">Vantaggi</a></li>
@@ -83,18 +51,31 @@
         </div>
     </header>
 
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Chi Siamo</a></li>
+                <li><a href="benefits.html">Vantaggi</a></li>
+                <li><a href="donate.html">Dona</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- Main Content -->
     <div class="container">
         <h1>Collabora con Noi</h1>
-        <p>Sei un'associazione senza scopo di lucro e desideri utilizzare il nostro servizio? ERGO41 offre una soluzione decentralizzata, trasparente e automatica per aiutarti a distribuire token di partecipazione e gestire il ritiro di beni essenziali come cibo, bevande, primo soccorso ed educazione.</p>
+        <p>Sei un'associazione senza scopo di lucro e desideri utilizzare il nostro servizio? ERGO4ONE offre una soluzione decentralizzata, trasparente e automatica per aiutarti a distribuire token di partecipazione e gestire il ritiro di beni essenziali come cibo, bevande, primo soccorso ed educazione.</p>
         
         <h2>Perché Collaborare con Noi?</h2>
         <p>Il nostro sistema ti consente di:</p>
         <ul>
-            <li><strong>Distribuire Token di Partecipazione:</strong> Rendi le tue attività più coinvolgenti, consentendo ai partecipanti di ricevere token che possono essere utilizzati per vari benefici.</li>
-            <li><strong>Ritirare Merci:</strong> Gestisci il ritiro di beni come cibo, bevande e materiali didattici in modo semplice e trasparente.</li>
-            <li><strong>Automazione dei Processi:</strong> Riduci il carico di lavoro grazie a un sistema automatizzato che semplifica la distribuzione e la gestione dei beni.</li>
-            <li><strong>Massima Trasparenza:</strong> Rendi il tuo operato chiaro e visibile, aumentando la fiducia nella tua associazione.</li>
+            <li><strong>Distribuire Token di Partecipazione:</strong> Rendi le tue attività più coinvolgenti, consentendo ai partecipanti di ricevere token che possono essere utilizzati per vari benefici, come accedere a eventi speciali o ricevere supporto per necessità essenziali.</li>
+            <li><strong>Ritirare Merci:</strong> Gestisci il ritiro di beni come cibo, bevande e materiali didattici in modo semplice e trasparente, garantendo una distribuzione equa a tutti i membri che ne hanno bisogno.</li>
+            <li><strong>Automazione dei Processi:</strong> Riduci il carico di lavoro del tuo team grazie a un sistema automatizzato che semplifica la distribuzione e la gestione dei beni, migliorando l'efficienza operativa e riducendo al minimo gli errori.</li>
+            <li><strong>Massima Trasparenza:</strong> Rendi il tuo operato chiaro e visibile, aumentando la fiducia nella tua associazione e consentendo ai tuoi sostenitori di vedere l'impatto delle loro donazioni in tempo reale.</li>
         </ul>
 
         <h2>Contattaci per Maggiori Informazioni</h2>
@@ -103,18 +84,36 @@
         <h2>Seguici sui Social Media</h2>
         <p>Rimani aggiornato sulle ultime novità e sulle opportunità di collaborazione seguendo i nostri profili sui social media:</p>
         <ul>
-            <li><a href="https://twitter.com/ergo_platform" target="_blank">Twitter</a></li>
-            <li><a href="https://github.com/ergoplatform" target="_blank">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/company/ergoplatform/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://twitter.com/ergo_platform" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="https://github.com/ergoplatform" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/company/ergoplatform/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         </ul>
     </div>
 
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 MillionErg. Tutti i Diritti Riservati.</p>
-            <a href="https://ergoplatform.org/" target="_blank">Learn more about Ergo</a>
+            <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
+            <a href="https://ergoplatform.org/" target="_blank" rel="noopener noreferrer">Learn more about Ergo</a>
         </div>
     </footer>
+
+    <!-- Script per il menu hamburger -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        hamburger.addEventListener('click', () => {
+            menuOverlay.classList.toggle('show');
+        });
+
+        // Chiudi il menu quando si fa clic su un link
+        const menuLinks = document.querySelectorAll("#menu-overlay a");
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 </html>
