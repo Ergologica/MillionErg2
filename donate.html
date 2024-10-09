@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dona - ERGO4ONE | Sostieni la Nostra Missione</title>
-    <meta name="description" content="Sostieni ERGO4ONE e contribuisci al cambiamento sociale attraverso le donazioni di token Ergo (ERG). Ogni contributo è importante.">
+    <meta name="description" content="Contribuisci alla nostra missione per costruire un mondo decentralizzato con ERGO4ONE donando token Ergo (ERG).">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -23,87 +23,207 @@
       }
     }
     </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+            flex: 1;
+        }
+        .logo-container img {
+            width: 100px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #004080;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        /* Stili per il menu a discesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 40px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .line {
+            height: 4px;
+            width: 100%;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        /* Stili per il menu mobile */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-overlay ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .menu-overlay ul li {
+            margin: 20px 0;
+        }
+        .menu-overlay.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Include lo stesso header e menu di index.html -->
+    <!-- Header Section -->
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-container">
+                <a href="https://ergoplatform.org" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.ibb.co/5Y6fP4Z/ergo.jpg" alt="Logo ERGO41" class="logo">
+                </a>
+            </div>
+            <h1>MillionErg</h1>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="benefits.html">Vantaggi</a></li>
+                    <li><a href="donate.html">Dona</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <nav>
+            <ul id="nav-links-mobile">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Chi Siamo</a></li>
+                <li><a href="benefits.html">Vantaggi</a></li>
+                <li><a href="donate.html">Dona</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <!-- Sezione Dona -->
     <section id="donate">
         <div class="container">
             <h2>Sostieni la Nostra Missione</h2>
             <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo dà potere agli individui e alle piccole imprese.</p>
-            <input id="amount" type="number" class="form-control w-50 d-inline-block" placeholder="Inserisci l'importo in ERG" min="1">
-            <button class="btn btn-primary" onclick="sendContribution()">Contribuisci</button>
-            <button class="btn btn-danger" onclick="closeCampaign()">Chiudi Campagna</button> <!-- Solo amministratore -->
-            <button class="btn btn-warning" onclick="requestRefund()">Chiedi Rimborso</button> <!-- Solo per contributori -->
+            <input type="number" id="amount" class="form-control w-50 d-inline-block" placeholder="Inserisci l'importo in ERG" min="1">
+            <button class="btn mt-3" onclick="sendContribution()">Dona Ora</button>
         </div>
     </section>
 
-    <!-- Script per interagire con Ergo -->
-    <script src="https://cdn.jsdelivr.net/npm/ergo-lib-wasm-browser/ergo_lib_wasm.js"></script>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ERGO4ONE. Tutti i Diritti Riservati.</p>
+        </div>
+    </footer>
+
     <script>
-        const adminAddress = "indirizzo_amministratore"; // Sostituire con l'indirizzo dell'amministratore
+        // Script per gestire l'apertura e la chiusura del menu mobile
+        const hamburger = document.getElementById('hamburger');
+        const menuOverlay = document.getElementById('menu-overlay');
 
-        async function closeCampaign() {
-            const ctx = await ergoConnector.nautilus.getContext();
-            const userAddress = await ctx.get_change_address();
+        hamburger.addEventListener('click', () => {
+            menuOverlay.classList.toggle('show');
+        });
 
-            if (userAddress !== adminAddress) {
-                alert('Solo l\'amministratore può chiudere la campagna.');
-                return;
-            }
-
-            const utxos = await ctx.get_utxos(1000000); 
-
-            const tx = await ctx.sign_tx({
-                inputs: utxos,
-                outputs: [
-                    {
-                        value: 1000000,
-                        address: userAddress,
-                        additionalRegisters: {}
-                    }
-                ],
-                fee: 1000000,
-                changeAddress: userAddress
+        // Chiudi il menu quando si fa clic su un link
+        const menuLinks = document.querySelectorAll("#menu-overlay a");
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('show');
             });
+        });
 
-            const txId = await ctx.submit_tx(tx);
-            console.log("ID transazione di chiusura inviata:", txId);
-            alert('La campagna è stata chiusa manualmente dall\'amministratore.');
-        }
-
-        async function requestRefund() {
-            const ctx = await ergoConnector.nautilus.getContext();
-            const userAddress = await ctx.get_change_address();
-
-            const isGoalReached = false; 
-            if (isGoalReached) {
-                alert('Non è possibile richiedere un rimborso: la campagna ha raggiunto il suo obiettivo.');
-                return;
+        // Funzione di esempio per il contributo
+        function sendContribution() {
+            const amount = document.getElementById('amount').value;
+            if (amount > 0) {
+                alert(`Grazie per aver donato ${amount} ERG!`);
+            } else {
+                alert("Per favore inserisci un importo valido per la donazione.");
             }
-
-            const utxos = await ctx.get_utxos(); 
-
-            const tx = await ctx.sign_tx({
-                inputs: utxos,
-                outputs: [
-                    {
-                        value: utxos.reduce((acc, utxo) => acc + utxo.value, 0),
-                        address: userAddress,
-                        additionalRegisters: {}
-                    }
-                ],
-                fee: 1000000,
-                changeAddress: userAddress
-            });
-
-            const txId = await ctx.submit_tx(tx);
-            console.log("ID transazione di rimborso inviata:", txId);
-            alert('Il tuo contributo è stato rimborsato.');
         }
     </script>
-
-    <!-- Include lo stesso footer di index.html -->
 </body>
 </html>
