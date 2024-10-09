@@ -122,6 +122,14 @@
         .expandable-container.expanded {
             display: block;
         }
+        /* Stili per centrare il contenuto delle sezioni Dona e Contatta */
+        #donate, #contact {
+            text-align: center;
+        }
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto; /* Centra il modulo nella pagina */
+        }
         /* Stili per il menu hamburger */
         .hamburger {
             display: none;
@@ -272,7 +280,7 @@
 
     <!-- Sezione Dona -->
     <section id="donate">
-        <div class="container">
+        <div class="container text-center">
             <h2>Sostieni la Nostra Missione</h2>
             <p>Aiuta a costruire un'economia decentralizzata ed equa donando token Ergo (ERG). Ogni contributo potenzia individui, piccole imprese e iniziative sociali, assicurando che ogni membro della comunità abbia un'opportunità reale di prosperare in un ambiente libero e aperto.</p>
             <a href="donate.html" class="btn">Dona ERG Ora</a>
@@ -281,7 +289,7 @@
 
     <!-- Sezione Contatti -->
     <section id="contact">
-        <div class="container">
+        <div class="container text-center">
             <h2>Contatta ERGO4ONE</h2>
             <button id="expand-contact-btn" class="btn">Mostra il modulo di contatto</button>
             <div id="contact-form-container" class="expandable-container">
@@ -333,4 +341,3 @@
     </script>
 </body>
 </html>
-
